@@ -1,0 +1,10 @@
+**
+!Dockerfile
+!pyproject.toml
+!README.md
+!requirements-dev.lock
+!src/
+!src/k8s_event_triage/
+!src/k8s_event_triage/*.py
+!scripts/
+!scripts/wheel_metadata.py

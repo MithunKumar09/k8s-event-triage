@@ -1,0 +1,255 @@
+{
+  "schema_version": "1",
+  "phase": 6,
+  "capture_status": "PASS",
+  "source_revision": null,
+  "wheel_sha256": "46effd1d792c14ab532a10a532ac66fb21172bab3a1851eb12d576bb596ee073",
+  "lineage": "Installed executable content verified against wheel and release source; final clean committed revision remains Phase 7 work.",
+  "executable_configuration_sha256": "0e25150c6958d8429f82aa0aff4613067337108e73fbefaee10c278865447d85",
+  "source_configuration_sha256": {
+    ".dockerignore": "0e610928e7776a6a13390ddde4dce1e0db400b1887e47270b33b68c829de8476",
+    ".gitattributes": "02f78f55bddc7c1f593fc847ef35aabaf680c931da58d8b7a435e1cf8c38ea97",
+    ".github/workflows/ci.yml": "5ce5aa5722e6ba271162ada6b9554d36120f3c01f999453c49ef47d6557fa177",
+    ".gitignore": "e4a24b73c7d8bf331b31ae48139cc28c41ebb03a27d0f9820f743b0fcecb4375",
+    "config.example.toml": "0101151c793695e91da9128539b5aca0de266c6fdce10184c1775719b5a96a02",
+    "Dockerfile": "7b6bee78fc3b510a22e8acb89a8c1e30143110e4f8aae5cb5208c8a051b5861c",
+    "Makefile": "38c3c67b9e7a2fd8c8ae585e5daf830782f96e2debe650e6eaa9c16ca79f4c7e",
+    "pyproject.toml": "ff61814603d1668384077dcc9e0ae8b3d39b96b44b855489cd05c71ddee38d08",
+    "README.md": "e96b492db1d285dcc4fb65004adf8bd4b7c8bbd8665e6bbe3f2e23e169273c3f",
+    "requirements-dev.in": "8dbd02ab7f5aa1e4b99007901ee50783e992f80abdc296246d872d515bad82e0",
+    "requirements-dev.lock": "0f2cd63f57e1e714d3d86aebcabe33a97917af34e1ffdd74ceda1fda35b4cc4a",
+    "scripts/_windows.py": "ae6ef98320dbf7769b6fe2433872d33cc8994a676f22692a7a58628db328add7",
+    "scripts/benchmark.py": "c3be802ebdc88bb6fc5699ae74420afd9d453ba794639bdc684e1a39f8e144e3",
+    "scripts/capture_outputs.py": "4952e69e75a1a35c4e4f8d1dd7dfc75fc18b925472ea34a1e308e2bcca5d11df",
+    "scripts/wheel_metadata.py": "7e1b688dc07cef88199e2aec62b80f2bf309941210b9b3753b3eccf688cd01ea",
+    "src/k8s_event_triage/__init__.py": "f269bb9b728f375b84f06b5ec5246073dfe5e1f36b316b8a906bad104f8663b2",
+    "src/k8s_event_triage/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/k8s_event_triage/classify.py": "ab162cdba2447257055303c927c36ef8f245f2939a55f53e35fc24bc42513b1d",
+    "src/k8s_event_triage/cli.py": "ccdfb9b62da640edd3ce7768faf83b8535f82e85af7baf32e70e3b57389491cf",
+    "src/k8s_event_triage/correlate.py": "7c75716685c2c8319144a5328e2923dcd3fdb57856bdd243d1f5fa11de9f69aa",
+    "src/k8s_event_triage/group.py": "4c2c35398014e08c35f594595f18b970a4d7da99e4534b57990ad68ba38b54cd",
+    "src/k8s_event_triage/model.py": "ee0575ba340cbf30ed97c45948fc10c539a527752945c44a391fad2619216d10",
+    "src/k8s_event_triage/parse.py": "22477d8a45c0fd93efa0044e202df29d209f5e4423de7745b18715117c991b0a",
+    "src/k8s_event_triage/policy.py": "a805e25a7a46bfd89a9581dcd88d36cfcb92efab6199c1a085598de963be32b5",
+    "src/k8s_event_triage/render.py": "50584630d3cb5737e7ecd8b4eca5e66dd97b17654516e6a42ee9d9be27ffaf60"
+  },
+  "dependency_lock_sha256": "0f2cd63f57e1e714d3d86aebcabe33a97917af34e1ffdd74ceda1fda35b4cc4a",
+  "python_version": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+  "configuration_file": null,
+  "configuration_sha256": null,
+  "effective_policy": {
+    "count_mode": "auto",
+    "episode_gap_seconds": 600,
+    "recurrence_count": 3,
+    "recurrence_span_seconds": 120,
+    "correlation_seconds": 120,
+    "corroboration_objects": 2,
+    "corroboration_observations": 3,
+    "max_records": 100000,
+    "max_input_bytes": 134217728,
+    "max_line_bytes": 65536
+  },
+  "effective_policy_sha256": "b4403ae5c7861b5a1d061c2de91f8176b91cd8467d9bfbd8f4eb755593968509",
+  "invocation": "python -m k8s_event_triage INPUT [--json], from repository root",
+  "artifacts": [
+    {
+      "input": "test-cases/04-test-a.jsonl",
+      "input_sha256": "6e50551ea98de5fd144d00d2e6ee97cfb1cae31fce618dd621714503298ca06e",
+      "format": "text",
+      "python_arguments": [
+        "-m",
+        "k8s_event_triage",
+        "test-cases/04-test-a.jsonl"
+      ],
+      "stdout": "outputs/04-test-a.stdout.txt",
+      "stderr": "outputs/04-test-a.text.stderr.txt",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout_bytes": 27869,
+          "stderr_bytes": 0,
+          "stdout_sha256": "300e8fac025879abb061113479ce1cd5ca66329e6c7117f36aa30c4e00c1d3bb",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout_bytes": 27869,
+          "stderr_bytes": 0,
+          "stdout_sha256": "300e8fac025879abb061113479ce1cd5ca66329e6c7117f36aa30c4e00c1d3bb",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "byte_repeatable": true
+    },
+    {
+      "input": "test-cases/04-test-a.jsonl",
+      "input_sha256": "6e50551ea98de5fd144d00d2e6ee97cfb1cae31fce618dd621714503298ca06e",
+      "format": "json",
+      "python_arguments": [
+        "-m",
+        "k8s_event_triage",
+        "test-cases/04-test-a.jsonl",
+        "--json"
+      ],
+      "stdout": "outputs/04-test-a.json",
+      "stderr": "outputs/04-test-a.json.stderr.txt",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout_bytes": 278345,
+          "stderr_bytes": 0,
+          "stdout_sha256": "c0d45c6a59dce8cc994007bb722ee9a87be95b691834b90f50690e160f7ebf08",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout_bytes": 278345,
+          "stderr_bytes": 0,
+          "stdout_sha256": "c0d45c6a59dce8cc994007bb722ee9a87be95b691834b90f50690e160f7ebf08",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "byte_repeatable": true
+    },
+    {
+      "input": "test-cases/05-test-b.jsonl",
+      "input_sha256": "7fa482c5087459d8d0ed802979eb586c74e7b1c3d2c689c264b822defcd4de1e",
+      "format": "text",
+      "python_arguments": [
+        "-m",
+        "k8s_event_triage",
+        "test-cases/05-test-b.jsonl"
+      ],
+      "stdout": "outputs/05-test-b.stdout.txt",
+      "stderr": "outputs/05-test-b.text.stderr.txt",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout_bytes": 13132,
+          "stderr_bytes": 0,
+          "stdout_sha256": "be496ffa4041c9116df89a15e2827cc28862f69650fc74a5862ca2c29c63f785",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout_bytes": 13132,
+          "stderr_bytes": 0,
+          "stdout_sha256": "be496ffa4041c9116df89a15e2827cc28862f69650fc74a5862ca2c29c63f785",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "byte_repeatable": true
+    },
+    {
+      "input": "test-cases/05-test-b.jsonl",
+      "input_sha256": "7fa482c5087459d8d0ed802979eb586c74e7b1c3d2c689c264b822defcd4de1e",
+      "format": "json",
+      "python_arguments": [
+        "-m",
+        "k8s_event_triage",
+        "test-cases/05-test-b.jsonl",
+        "--json"
+      ],
+      "stdout": "outputs/05-test-b.json",
+      "stderr": "outputs/05-test-b.json.stderr.txt",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout_bytes": 168020,
+          "stderr_bytes": 0,
+          "stdout_sha256": "5110f9aa0216b67b380070c41070d78695dff1a5063aa855714a2bbf54c796e9",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout_bytes": 168020,
+          "stderr_bytes": 0,
+          "stdout_sha256": "5110f9aa0216b67b380070c41070d78695dff1a5063aa855714a2bbf54c796e9",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "byte_repeatable": true
+    },
+    {
+      "input": "test-cases/06-test-c.jsonl",
+      "input_sha256": "33c77616414301f2130ffba7246cfbda6f1e9ab9006775c5aff833b3d3927843",
+      "format": "text",
+      "python_arguments": [
+        "-m",
+        "k8s_event_triage",
+        "test-cases/06-test-c.jsonl"
+      ],
+      "stdout": "outputs/06-test-c.stdout.txt",
+      "stderr": "outputs/06-test-c.text.stderr.txt",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout_bytes": 26811,
+          "stderr_bytes": 0,
+          "stdout_sha256": "ac8bf3ce545e4268f41bd2cb342fae8c7aaf53ee838a5e5a82f1226461b7c1a6",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout_bytes": 26811,
+          "stderr_bytes": 0,
+          "stdout_sha256": "ac8bf3ce545e4268f41bd2cb342fae8c7aaf53ee838a5e5a82f1226461b7c1a6",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "byte_repeatable": true
+    },
+    {
+      "input": "test-cases/06-test-c.jsonl",
+      "input_sha256": "33c77616414301f2130ffba7246cfbda6f1e9ab9006775c5aff833b3d3927843",
+      "format": "json",
+      "python_arguments": [
+        "-m",
+        "k8s_event_triage",
+        "test-cases/06-test-c.jsonl",
+        "--json"
+      ],
+      "stdout": "outputs/06-test-c.json",
+      "stderr": "outputs/06-test-c.json.stderr.txt",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout_bytes": 289287,
+          "stderr_bytes": 0,
+          "stdout_sha256": "5d5823b77ce148effeea714218fd5187de3711ab7c5b33de12928de00b1498e1",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout_bytes": 289287,
+          "stderr_bytes": 0,
+          "stdout_sha256": "5d5823b77ce148effeea714218fd5187de3711ab7c5b33de12928de00b1498e1",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "byte_repeatable": true
+    }
+  ],
+  "analysis": {
+    "path": "ANALYSIS.md",
+    "sha256": "e806696aebe0842a353d924b662e45cde30e964031afadd750c92870a87c9d2f",
+    "scenario_word_counts": {
+      "04-test-a": 148,
+      "05-test-b": 144,
+      "06-test-c": 153
+    },
+    "fact_verification": "See ANALYSIS.md and release verification evidence"
+  }
+}

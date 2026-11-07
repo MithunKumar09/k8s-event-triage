@@ -1,0 +1,5 @@
+* text=auto eol=lf
+test-cases/*.jsonl -text
+outputs/*.stdout.txt -text
+outputs/*.json -text
+outputs/*.stderr.txt -text

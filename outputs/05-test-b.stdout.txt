@@ -1,0 +1,99 @@
+KUBERNETES CLUSTER EVENT TRIAGE
+Records ingested: 20,000 | Filtered as noise: 12,874 | Context: 7,110 | Issues: 1
+Count mode: auto | Policy SHA-256: b4403ae5c7861b5a1d061c2de91f8176b91cd8467d9bfbd8f4eb755593968509
+Input SHA-256: 7fa482c5087459d8d0ed802979eb586c74e7b1c3d2c689c264b822defcd4de1e | Repeated-payload candidates: 0
+
+[CRITICAL] node-4 (node; cluster=prod-us-east-1; namespace=not applicable/unknown)
+Incident 1: incident-4748c34865434d78c0baff3e24ed45d59bfdbe51d41546f6ea60850b9c1bc6ef
+Affected objects: 9 | Event range: 2024-06-01T10:15:00.000000Z .. 2024-06-01T10:16:37.935000Z
+Pattern: direct or corroborated observations; event types are not crash totals.
+Likely cause (confidence=high): The affected Node reports disk pressure.
+  Evicted: rows=8; mode=occurrence; observed occurrences=8 (exact)
+  NodeHasDiskPressure: rows=1; mode=occurrence; observed occurrences=1 (exact)
+  Object Node/node-4 uid=ac1dc1f0-e6b7-665e-4729-9a7e7166ac3f container=unknown affected nodes=node-4
+    Ownership: unknown (low); workload association requires a known namespaced cluster scope
+    NodeHasDiskPressure / disk-pressure: rows=1; mode=occurrence; observed occurrences=1 (exact)
+    Range: 2024-06-01T10:15:00.000000Z .. 2024-06-01T10:15:00.000000Z; evidence=evidence-0879f03cf439640ad567b051257fed38eb0ccaebe51d7923bb175833ad5111a5
+    Rule: direct affected-Node condition evidence; cause confidence=high
+    Evidence record-a11c30988050b0325d9930dcfc46acabd337ab687d096d2b664e888afe9274e4 (05-test-b.jsonl:9848): Node node-4 status is now: NodeHasDiskPressure
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/inventory-service-417fd2d9c-083cc uid=69bcb127-3d4e-63bc-910a-b552a4d654ac container=unknown affected nodes=node-4
+    Ownership: inferred (medium); Deployment/ReplicaSet generation inferred from Pod naming; verify ownerReferences
+    Evicted / disk-pressure: rows=1; mode=occurrence; observed occurrences=1 (exact)
+    Range: 2024-06-01T10:16:28.595000Z .. 2024-06-01T10:16:28.595000Z; evidence=evidence-1cfb2e27f8692fe085eb79bf467202f8b962ac4374656af8860bd35f3b7d9ac1
+    Rule: corroborated resource-pressure eviction; cause confidence=medium
+    Evidence record-7413358c1e6ea528579f751cbc8e95e9269a49da0ad1304237789dd77238f383 (05-test-b.jsonl:10853): The node had condition: [DiskPressure]. 
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/data-pipeline-26f6fad4e-0e53b uid=ee0d447b-1d2f-7d46-a33d-bcdd82482de0 container=unknown affected nodes=node-4
+    Ownership: inferred (medium); Deployment/ReplicaSet generation inferred from Pod naming; verify ownerReferences
+    Evicted / disk-pressure: rows=1; mode=occurrence; observed occurrences=1 (exact)
+    Range: 2024-06-01T10:15:25.779000Z .. 2024-06-01T10:15:25.779000Z; evidence=evidence-6024f0b807ca342057ded448b41e83acb16b82e0ec68abf1c575f8a62a2aa115
+    Rule: corroborated resource-pressure eviction; cause confidence=medium
+    Evidence record-b7c3c929da919a78974eb6d1c4d2ff88a792e8eee3527410aec1237733d42e63 (05-test-b.jsonl:10138): The node had condition: [DiskPressure]. 
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/metrics-collector-46dcac1b0-35a6d uid=8f0a2ddd-173f-03a6-37c7-d717a1680199 container=unknown affected nodes=node-4
+    Ownership: inferred (medium); Deployment/ReplicaSet generation inferred from Pod naming; verify ownerReferences
+    Evicted / disk-pressure: rows=1; mode=occurrence; observed occurrences=1 (exact)
+    Range: 2024-06-01T10:15:48.657000Z .. 2024-06-01T10:15:48.657000Z; evidence=evidence-794ce16ad36956d135289a3ff5b4bf9ea241b8fe2c7cbd223a2b21b5c8b891d5
+    Rule: corroborated resource-pressure eviction; cause confidence=medium
+    Evidence record-a885a0af149b6388925612f7114940fd96582af53ec8c20eefdd350de47e8d7c (05-test-b.jsonl:10420): The node had condition: [DiskPressure]. 
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/batch-reporter-820090759-b420b uid=9dc925c9-a175-155a-fdab-503b5cb07626 container=unknown affected nodes=node-4
+    Ownership: inferred (medium); Deployment/ReplicaSet generation inferred from Pod naming; verify ownerReferences
+    Evicted / disk-pressure: rows=1; mode=occurrence; observed occurrences=1 (exact)
+    Range: 2024-06-01T10:15:15.359000Z .. 2024-06-01T10:15:15.359000Z; evidence=evidence-987ee53bb62b5dd2b4396a7b2495a3280d3bd4fe45242001040272fb4c82b0df
+    Rule: corroborated resource-pressure eviction; cause confidence=medium
+    Evidence record-8a49cd1547e6be36d1a5c8258b80d3bd3a29edef2f42ca093419f08ff5623f63 (05-test-b.jsonl:10003): The node had condition: [DiskPressure]. 
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/notification-service-1afa35f80-97fed uid=7fe4390c-7886-a2fb-7b03-95948379573b container=unknown affected nodes=node-4
+    Ownership: inferred (medium); Deployment/ReplicaSet generation inferred from Pod naming; verify ownerReferences
+    Evicted / disk-pressure: rows=1; mode=occurrence; observed occurrences=1 (exact)
+    Range: 2024-06-01T10:16:37.935000Z .. 2024-06-01T10:16:37.935000Z; evidence=evidence-ae6dd93c4b8dbcdc6affb45bb7a3484f3b1b36dddf071f08f9a7eaef8d450f42
+    Rule: corroborated resource-pressure eviction; cause confidence=medium
+    Evidence record-6fb9a91730567a81d59232523de4e9d0f32b6c5959693d9fe874e79a5caf6e44 (05-test-b.jsonl:10982): The node had condition: [DiskPressure]. 
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/metrics-collector-e8e601600-73ab5 uid=9b3b37f1-fb10-442d-07e0-e9cad4c81b8f container=unknown affected nodes=node-4
+    Ownership: inferred (medium); Deployment/ReplicaSet generation inferred from Pod naming; verify ownerReferences
+    Evicted / disk-pressure: rows=1; mode=occurrence; observed occurrences=1 (exact)
+    Range: 2024-06-01T10:16:08.629000Z .. 2024-06-01T10:16:08.629000Z; evidence=evidence-c6293d05923408c71c9e6f78b2c4ea7682790f676991e2e3a0528459644600a0
+    Rule: corroborated resource-pressure eviction; cause confidence=medium
+    Evidence record-144c2642db1904f323c3383e75230012a585f1ec0163b1ecd37313c4807ab78b (05-test-b.jsonl:10620): The node had condition: [DiskPressure]. 
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/auth-service-cb5f88109-57949 uid=9556033b-6d2b-e754-829d-d284e1108096 container=unknown affected nodes=node-4
+    Ownership: inferred (medium); Deployment/ReplicaSet generation inferred from Pod naming; verify ownerReferences
+    Evicted / disk-pressure: rows=1; mode=occurrence; observed occurrences=1 (exact)
+    Range: 2024-06-01T10:16:25.429000Z .. 2024-06-01T10:16:25.429000Z; evidence=evidence-cac32d098b8b1ee9a39690a0fe6c1d9bc42ff02697952bcf0d1f0435083fca87
+    Rule: corroborated resource-pressure eviction; cause confidence=medium
+    Evidence record-970f2dacf9754a162894fd89727b45217928e6d841bbd6ebd459bc6de0359219 (05-test-b.jsonl:10833): The node had condition: [DiskPressure]. 
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/data-pipeline-de2124cc2-7a2a0 uid=4c2c7c19-a6f6-0350-5d3a-a3b52692d44b container=unknown affected nodes=node-4
+    Ownership: inferred (medium); Deployment/ReplicaSet generation inferred from Pod naming; verify ownerReferences
+    Evicted / disk-pressure: rows=1; mode=occurrence; observed occurrences=1 (exact)
+    Range: 2024-06-01T10:15:43.272000Z .. 2024-06-01T10:15:43.272000Z; evidence=evidence-ded296ac6f1acf473d43a7a460022c428be64cb3be7a159ffa2d0e4c5a197ab7
+    Rule: corroborated resource-pressure eviction; cause confidence=medium
+    Evidence record-b8048debcb4e40218f3aac82d6f07ea12b6f62e10e69c6dbab94f5a08b68f1ea (05-test-b.jsonl:10365): The node had condition: [DiskPressure]. 
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Association (node; medium): matching affected node, compatible condition, generation and nearby evidence; reporter is not used; evidence=evidence-1cfb2e27f8692fe085eb79bf467202f8b962ac4374656af8860bd35f3b7d9ac1,evidence-0879f03cf439640ad567b051257fed38eb0ccaebe51d7923bb175833ad5111a5
+  Association (node; medium): matching affected node, compatible condition, generation and nearby evidence; reporter is not used; evidence=evidence-6024f0b807ca342057ded448b41e83acb16b82e0ec68abf1c575f8a62a2aa115,evidence-0879f03cf439640ad567b051257fed38eb0ccaebe51d7923bb175833ad5111a5
+  Association (node; medium): matching affected node, compatible condition, generation and nearby evidence; reporter is not used; evidence=evidence-794ce16ad36956d135289a3ff5b4bf9ea241b8fe2c7cbd223a2b21b5c8b891d5,evidence-0879f03cf439640ad567b051257fed38eb0ccaebe51d7923bb175833ad5111a5
+  Association (node; medium): matching affected node, compatible condition, generation and nearby evidence; reporter is not used; evidence=evidence-987ee53bb62b5dd2b4396a7b2495a3280d3bd4fe45242001040272fb4c82b0df,evidence-0879f03cf439640ad567b051257fed38eb0ccaebe51d7923bb175833ad5111a5
+  Association (node; medium): matching affected node, compatible condition, generation and nearby evidence; reporter is not used; evidence=evidence-ae6dd93c4b8dbcdc6affb45bb7a3484f3b1b36dddf071f08f9a7eaef8d450f42,evidence-0879f03cf439640ad567b051257fed38eb0ccaebe51d7923bb175833ad5111a5
+  Association (node; medium): matching affected node, compatible condition, generation and nearby evidence; reporter is not used; evidence=evidence-c6293d05923408c71c9e6f78b2c4ea7682790f676991e2e3a0528459644600a0,evidence-0879f03cf439640ad567b051257fed38eb0ccaebe51d7923bb175833ad5111a5
+  Association (node; medium): matching affected node, compatible condition, generation and nearby evidence; reporter is not used; evidence=evidence-cac32d098b8b1ee9a39690a0fe6c1d9bc42ff02697952bcf0d1f0435083fca87,evidence-0879f03cf439640ad567b051257fed38eb0ccaebe51d7923bb175833ad5111a5
+  Association (node; medium): matching affected node, compatible condition, generation and nearby evidence; reporter is not used; evidence=evidence-ded296ac6f1acf473d43a7a460022c428be64cb3be7a159ffa2d0e4c5a197ab7,evidence-0879f03cf439640ad567b051257fed38eb0ccaebe51d7923bb175833ad5111a5
+  Association (node; high): affected-node association from resource/scheduling evidence on the same Pod UID; evidence=record-144c2642db1904f323c3383e75230012a585f1ec0163b1ecd37313c4807ab78b
+  Association (node; high): affected-node association from resource/scheduling evidence on the same Pod UID; evidence=record-6fb9a91730567a81d59232523de4e9d0f32b6c5959693d9fe874e79a5caf6e44
+  Association (node; high): affected-node association from resource/scheduling evidence on the same Pod UID; evidence=record-7413358c1e6ea528579f751cbc8e95e9269a49da0ad1304237789dd77238f383
+  Association (node; high): affected-node association from resource/scheduling evidence on the same Pod UID; evidence=record-8a49cd1547e6be36d1a5c8258b80d3bd3a29edef2f42ca093419f08ff5623f63
+  Association (node; high): affected-node association from resource/scheduling evidence on the same Pod UID; evidence=record-970f2dacf9754a162894fd89727b45217928e6d841bbd6ebd459bc6de0359219
+  Association (node; high): affected-node association from resource/scheduling evidence on the same Pod UID; evidence=record-a885a0af149b6388925612f7114940fd96582af53ec8c20eefdd350de47e8d7c
+  Association (node; high): affected-node association from resource/scheduling evidence on the same Pod UID; evidence=record-b7c3c929da919a78974eb6d1c4d2ff88a792e8eee3527410aec1237733d42e63
+  Association (node; high): affected-node association from resource/scheduling evidence on the same Pod UID; evidence=record-b8048debcb4e40218f3aac82d6f07ea12b6f62e10e69c6dbab94f5a08b68f1ea
+Next verification: Inspect Node conditions, kubelet status, disk usage and affected Pod placement.
+
+Nonreportable observations: 5 (full evidence retained in JSON)
+  batch-reporter-19cb12bab-7143a / Unhealthy: rows=3; mode=occurrence; observed occurrences=3 (exact); transient or insufficient independent evidence; evidence=evidence-f1843ff7cd45896f848c567b44cac97b3a40f5ac6e65248748f5b72bda77b739
+  data-pipeline-7a960e693-836d4 / Evicted: rows=1; mode=occurrence; observed occurrences=1 (exact); transient or insufficient independent evidence; evidence=evidence-4a7bd09d1309f21b03436a54ece7635f1630fb64e95227b0f16e9edaba62f235
+  api-gateway-671566a46-799ae / FailedMount: rows=1; mode=occurrence; observed occurrences=1 (exact); transient or insufficient independent evidence; evidence=evidence-fd69877836838c2521f07d5fd824363d40bb6b6fd0e3e59c951c77d48ac940f7
+  inventory-service-417fd2d9c-d840f / Evicted: rows=1; mode=occurrence; observed occurrences=1 (exact); transient or insufficient independent evidence; evidence=evidence-47434e093514abd2a1b8c5199ff97eabb69be4f80a30aba4269803286551800d
+  data-pipeline-de2124cc2-9e145 / Evicted: rows=1; mode=occurrence; observed occurrences=1 (exact); transient or insufficient independent evidence; evidence=evidence-e366f92cfba09819e25ba0fd4853648a9ba30a7cb877ac3568cace28f46889aa

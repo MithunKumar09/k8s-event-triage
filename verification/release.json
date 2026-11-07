@@ -1,0 +1,78 @@
+{
+  "phase": 6,
+  "status": "PASS",
+  "source_revision": null,
+  "source_revision_note": "Verified working tree; final committed source and capture reconciliation remain Phase 7",
+  "executable_configuration_sha256": "0e25150c6958d8429f82aa0aff4613067337108e73fbefaee10c278865447d85",
+  "source_configuration_sha256": {
+    ".dockerignore": "0e610928e7776a6a13390ddde4dce1e0db400b1887e47270b33b68c829de8476",
+    ".gitattributes": "02f78f55bddc7c1f593fc847ef35aabaf680c931da58d8b7a435e1cf8c38ea97",
+    ".github/workflows/ci.yml": "5ce5aa5722e6ba271162ada6b9554d36120f3c01f999453c49ef47d6557fa177",
+    ".gitignore": "e4a24b73c7d8bf331b31ae48139cc28c41ebb03a27d0f9820f743b0fcecb4375",
+    "config.example.toml": "0101151c793695e91da9128539b5aca0de266c6fdce10184c1775719b5a96a02",
+    "Dockerfile": "7b6bee78fc3b510a22e8acb89a8c1e30143110e4f8aae5cb5208c8a051b5861c",
+    "Makefile": "38c3c67b9e7a2fd8c8ae585e5daf830782f96e2debe650e6eaa9c16ca79f4c7e",
+    "pyproject.toml": "ff61814603d1668384077dcc9e0ae8b3d39b96b44b855489cd05c71ddee38d08",
+    "README.md": "e96b492db1d285dcc4fb65004adf8bd4b7c8bbd8665e6bbe3f2e23e169273c3f",
+    "requirements-dev.in": "8dbd02ab7f5aa1e4b99007901ee50783e992f80abdc296246d872d515bad82e0",
+    "requirements-dev.lock": "0f2cd63f57e1e714d3d86aebcabe33a97917af34e1ffdd74ceda1fda35b4cc4a",
+    "scripts/_windows.py": "ae6ef98320dbf7769b6fe2433872d33cc8994a676f22692a7a58628db328add7",
+    "scripts/benchmark.py": "c3be802ebdc88bb6fc5699ae74420afd9d453ba794639bdc684e1a39f8e144e3",
+    "scripts/capture_outputs.py": "4952e69e75a1a35c4e4f8d1dd7dfc75fc18b925472ea34a1e308e2bcca5d11df",
+    "scripts/wheel_metadata.py": "7e1b688dc07cef88199e2aec62b80f2bf309941210b9b3753b3eccf688cd01ea",
+    "src/k8s_event_triage/__init__.py": "f269bb9b728f375b84f06b5ec5246073dfe5e1f36b316b8a906bad104f8663b2",
+    "src/k8s_event_triage/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/k8s_event_triage/classify.py": "ab162cdba2447257055303c927c36ef8f245f2939a55f53e35fc24bc42513b1d",
+    "src/k8s_event_triage/cli.py": "ccdfb9b62da640edd3ce7768faf83b8535f82e85af7baf32e70e3b57389491cf",
+    "src/k8s_event_triage/correlate.py": "7c75716685c2c8319144a5328e2923dcd3fdb57856bdd243d1f5fa11de9f69aa",
+    "src/k8s_event_triage/group.py": "4c2c35398014e08c35f594595f18b970a4d7da99e4534b57990ad68ba38b54cd",
+    "src/k8s_event_triage/model.py": "ee0575ba340cbf30ed97c45948fc10c539a527752945c44a391fad2619216d10",
+    "src/k8s_event_triage/parse.py": "22477d8a45c0fd93efa0044e202df29d209f5e4423de7745b18715117c991b0a",
+    "src/k8s_event_triage/policy.py": "a805e25a7a46bfd89a9581dcd88d36cfcb92efab6199c1a085598de963be32b5",
+    "src/k8s_event_triage/render.py": "50584630d3cb5737e7ecd8b4eca5e66dd97b17654516e6a42ee9d9be27ffaf60"
+  },
+  "effective_policy_sha256": "b4403ae5c7861b5a1d061c2de91f8176b91cd8467d9bfbd8f4eb755593968509",
+  "wheel_sha256": "46effd1d792c14ab532a10a532ac66fb21172bab3a1851eb12d576bb596ee073",
+  "container_image_id": "sha256:41e50fa155536f78ac96b387a1dd0770de06bf5de76c7075028fb243babfa783",
+  "tests": {
+    "windows": 331,
+    "linux": 331,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "performance": {
+    "windows": {
+      "max_measured_seconds": 1.8290426999992633,
+      "max_observed_rss_mib": 88.47265625,
+      "launches": 72,
+      "measured_runs": 60,
+      "first_launches": 12
+    },
+    "linux": {
+      "max_measured_seconds": 1.764420545000121,
+      "max_observed_rss_mib": 87.11328125,
+      "launches": 72,
+      "measured_runs": 60,
+      "first_launches": 12
+    }
+  },
+  "dependency_lock_sha256": "0f2cd63f57e1e714d3d86aebcabe33a97917af34e1ffdd74ceda1fda35b4cc4a",
+  "locked_packages": 51,
+  "known_pypi_vulnerabilities": 0,
+  "signal_rows": 425,
+  "analysis_highlighted_observations": 410,
+  "other_retained_transient_signals": 15,
+  "original_assessment_materials_preserved": 9,
+  "application_source_changed": false,
+  "hosted_ci_executed": false,
+  "git_submission_or_reviewer_access_changed": false,
+  "phase7_started": false,
+  "limitations": [
+    "GitHub-hosted workflow has not run; equivalent Linux commands executed locally",
+    "GNU Make ran in Linux; Windows host Make absent. Docker Make wrappers only dry-run; actual Docker commands independently verified",
+    "No OS-image/interpreter CVE scan; pip-audit covers known advisories for the full 51-package development closure",
+    "RSS samples can miss late peaks; parent capture buffers excluded; no cold-cache/exclusive-host/hardware-independent claim",
+    "Fresh submission export verified; final committed checkout/reviewer access remains Phase 7"
+  ]
+}

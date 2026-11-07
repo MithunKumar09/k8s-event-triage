@@ -1,0 +1,203 @@
+KUBERNETES CLUSTER EVENT TRIAGE
+Records ingested: 20,000 | Filtered as noise: 12,730 | Context: 7,043 | Issues: 7
+Count mode: auto | Policy SHA-256: b4403ae5c7861b5a1d061c2de91f8176b91cd8467d9bfbd8f4eb755593968509
+Input SHA-256: 6e50551ea98de5fd144d00d2e6ee97cfb1cae31fce618dd621714503298ca06e | Repeated-payload candidates: 0
+
+[WARNING] checkout-service (workload; cluster=prod-us-east-1; namespace=production)
+Incident 1: incident-8e384e421665ecdf7ae5e66e277cb26fbbdd28b9f370556f882b9414af86fd44
+Affected objects: 5 | Event range: 2024-06-01T10:22:07.319000Z .. 2024-06-01T10:29:56.262000Z
+Pattern: recurrent observations; event types are not crash totals.
+Likely cause (confidence=medium): Readiness/liveness probes are failing; a probe URL alone does not establish an upstream cause. Recurrent observations are supported; uninterrupted outage or recovery is not established. An evidence-linked scale-up preceded failure onset; rollout causation remains a hypothesis.
+  Unhealthy: rows=178; mode=occurrence; observed occurrences=178 (exact)
+  Object Pod/checkout-service-7d4f8b9c5-cc6bb uid=d2fc250a-0d69-0741-69b2-414ba67c1b93 container=container/checkout affected nodes=node-5
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    Unhealthy / readiness-failure: rows=36; mode=occurrence; observed occurrences=36 (exact)
+    Range: 2024-06-01T10:22:26.310000Z .. 2024-06-01T10:29:55.734000Z; evidence=evidence-5c31663b06a4cb6a7734a292574513211ea6e223ccc80ab049d3bff9f02fdedb
+    Rule: supported recurrence; cause confidence=medium
+    Evidence record-0e41e71ed4af594a17e9018ea19531de3894bf8cf893971b3a212d6556b35781 (04-test-a.jsonl:15146): Readiness probe failed: HTTP probe failed with statuscode: 404
+    Evidence record-dd6972df38eca6af82787179eb7eb0d8be90bb6f7fe21b7289eee801789e8d35 (04-test-a.jsonl:19989): Readiness probe failed: HTTP probe failed with statuscode: 404
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/checkout-service-7d4f8b9c5-272a1 uid=8b3679b0-b9a3-58fe-dea7-a9843fec6736 container=container/checkout affected nodes=node-2
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    Unhealthy / readiness-failure: rows=32; mode=occurrence; observed occurrences=32 (exact)
+    Range: 2024-06-01T10:22:30.538000Z .. 2024-06-01T10:29:51.842000Z; evidence=evidence-babbeffa1bf46143a92b78800120711565cec1b9c273861a5dd88205c239b469
+    Rule: supported recurrence; cause confidence=medium
+    Evidence record-b9dfff09366030c5775b470ae1d71072aa01dbd44d9351d551445862c825c9d1 (04-test-a.jsonl:15180): Readiness probe failed: HTTP probe failed with statuscode: 404
+    Evidence record-22f14fe625332072cc8de2cddb4af727fc9db893535e8fe8c8ac762186eda15e (04-test-a.jsonl:19985): Readiness probe failed: HTTP probe failed with statuscode: 404
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/checkout-service-7d4f8b9c5-005e2 uid=f0cba33e-5d91-a038-06ed-c41754cb35ff container=container/checkout affected nodes=node-2
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    Unhealthy / readiness-failure: rows=37; mode=occurrence; observed occurrences=37 (exact)
+    Range: 2024-06-01T10:22:07.319000Z .. 2024-06-01T10:29:50.712000Z; evidence=evidence-bb8e07a13bc5ab8e8f7ffb175cf7474a87a7f973c0dda572d759bc060a91bd82
+    Rule: supported recurrence; cause confidence=medium
+    Evidence record-0f641e9b1da2000e19981fb2316a4d88b7af50b472598d0d818c9b2ac114dd5b (04-test-a.jsonl:14887): Readiness probe failed: HTTP probe failed with statuscode: 404
+    Evidence record-d4ca9828f3b0c8a963a42820c1df9abad33f482336d6e25738684150b0939ccf (04-test-a.jsonl:19982): Readiness probe failed: HTTP probe failed with statuscode: 404
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/checkout-service-7d4f8b9c5-7f871 uid=b2534dbd-9a3f-0c2e-3715-4f15e1507b7a container=container/checkout affected nodes=node-3
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    Unhealthy / readiness-failure: rows=39; mode=occurrence; observed occurrences=39 (exact)
+    Range: 2024-06-01T10:22:15.743000Z .. 2024-06-01T10:29:56.262000Z; evidence=evidence-bdeac24f0b2d3aab1cacc4bdc604132277eeef2e05d402e36d81ee1ac70a491e
+    Rule: supported recurrence; cause confidence=medium
+    Evidence record-6787b39a0359e12ef186ca7a84d63daa714c908ca134a0ef12909798f19d6afe (04-test-a.jsonl:15043): Readiness probe failed: HTTP probe failed with statuscode: 404
+    Evidence record-56ad3ad0d6fd625e5877eacb55e3c5a1538a26d28347ec804c6d1fb0ebd63fde (04-test-a.jsonl:19990): Readiness probe failed: HTTP probe failed with statuscode: 404
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/checkout-service-7d4f8b9c5-c257b uid=8466bc73-698f-8346-a916-535ac25dc97e container=container/checkout affected nodes=node-2
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    Unhealthy / readiness-failure: rows=34; mode=occurrence; observed occurrences=34 (exact)
+    Range: 2024-06-01T10:22:14.454000Z .. 2024-06-01T10:29:45.084000Z; evidence=evidence-f066c7a877a146574b79f6a620d63c430b7ebf557b9c4fb8e2b65de67b0fff1a
+    Rule: supported recurrence; cause confidence=medium
+    Evidence record-cc90251f6b8940c501ec27ed081bb7e6216bbf622e894d752a60ded61d369b03 (04-test-a.jsonl:15019): Readiness probe failed: HTTP probe failed with statuscode: 404
+    Evidence record-403ee22f7a5f2f8db7a593c9a137553bde5ae88f9e05a1d728fd6af2d594170e (04-test-a.jsonl:19963): Readiness probe failed: HTTP probe failed with statuscode: 404
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Association (node; high): affected-node association from resource/scheduling evidence on the same Pod UID; evidence=record-ad4a139a347874b88b253f04a41883504be7f8f18f66508c7ef9ae7f5a100888
+  Association (node; high): affected-node association from resource/scheduling evidence on the same Pod UID; evidence=record-c2e7931e196a13e9db4fd167df3799a8f0ad83fc9ea85eac3658f86749ed9d60
+  Association (node; high): affected-node association from resource/scheduling evidence on the same Pod UID; evidence=record-f9d2c9efbee4e19b69c7ec64a72ecedb5c236f1bd9cf22e40a40f647e23d3daa
+  Association (node; high): affected-node association from resource/scheduling evidence on the same Pod UID; evidence=record-ada2f7b52ab868103c70600e39837fb5345f7a334d272f8ef90352c981669287
+  Association (node; high): affected-node association from resource/scheduling evidence on the same Pod UID; evidence=record-abf0022c41600a5ea63fcedf0e918833eff30cb63dd190642d18076e0f355385
+  Association (rollout; medium): scale-up precedes failure onset within correlation threshold; temporal association is not proof of causation; evidence=record-d6d181ce6c2fe4e86b7c2aaf4e707b07af07d33d977181ec8e7bba0629b10184,record-03f8f292044e6b1b29a639e7cdf88378a92064489b3f4f8c0ec9e74624ea5961
+  Association (rollout; medium): scale-up precedes failure onset within correlation threshold; temporal association is not proof of causation; evidence=record-d6d181ce6c2fe4e86b7c2aaf4e707b07af07d33d977181ec8e7bba0629b10184,record-6149b836d9c57eef6aed2fd558ed995595de2a1ca07197ec32279aff21a96fec
+  Association (rollout; medium): scale-up precedes failure onset within correlation threshold; temporal association is not proof of causation; evidence=record-d6d181ce6c2fe4e86b7c2aaf4e707b07af07d33d977181ec8e7bba0629b10184,record-70d836990a8e786b2c620464d3cb16eddd100b705b3b9abac5a4c1eacdf1a5b2
+  Association (rollout; medium): scale-up precedes failure onset within correlation threshold; temporal association is not proof of causation; evidence=record-d6d181ce6c2fe4e86b7c2aaf4e707b07af07d33d977181ec8e7bba0629b10184,record-90efb616f755955e0d1751bbdb634eee6a2d6981147c042da3e23d4db5e33512
+  Association (rollout; medium): scale-up precedes failure onset within correlation threshold; temporal association is not proof of causation; evidence=record-d6d181ce6c2fe4e86b7c2aaf4e707b07af07d33d977181ec8e7bba0629b10184,record-bdb1448ff81727539e2e087ccd419e6f5ff848686692e08a68351c635bc8d022
+Next verification: Inspect the specific probe, application logs and endpoint response before changing probe settings.
+
+[WARNING] checkout-service (workload; cluster=prod-us-east-1; namespace=production)
+Incident 2: incident-446d4f0aec8568cf3b06f14e8beb2e0cf4f1479c9fd4787dbc9c4a76c776afc1
+Affected objects: 4 | Event range: 2024-06-01T10:22:40.925000Z .. 2024-06-01T10:29:55.424000Z
+Pattern: recurrent observations; event types are not crash totals.
+Likely cause (confidence=medium): Readiness/liveness probes are failing; a probe URL alone does not establish an upstream cause. Recurrent observations are supported; uninterrupted outage or recovery is not established. An evidence-linked scale-up preceded failure onset; rollout causation remains a hypothesis.
+  Unhealthy: rows=18; mode=occurrence; observed occurrences=18 (exact)
+  Object Pod/checkout-service-7d4f8b9c5-272a1 uid=8b3679b0-b9a3-58fe-dea7-a9843fec6736 container=container/checkout affected nodes=node-2
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    Unhealthy / readiness-timeout: rows=4; mode=occurrence; observed occurrences=4 (exact)
+    Range: 2024-06-01T10:22:40.925000Z .. 2024-06-01T10:28:59.357000Z; evidence=evidence-341ef091b6e863a75100558b0358c7dee578258d7772b923c871dc9ffbac030d
+    Rule: supported recurrence; cause confidence=medium
+    Evidence record-47a279542c276cc03ce62d3e2fbb5f641729bd643ebc9dc45574b439f5ecc551 (04-test-a.jsonl:15338): Readiness probe failed: Get \"http://10.244.14.127:8080/healthcheck\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+    Evidence record-f82740e40fe8aa16739df90f9c6e026b9ffca6d44e1bf58c077e247d06a4f294 (04-test-a.jsonl:19838): Readiness probe failed: Get \"http://10.244.14.127:8080/healthcheck\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/checkout-service-7d4f8b9c5-005e2 uid=f0cba33e-5d91-a038-06ed-c41754cb35ff container=container/checkout affected nodes=node-2
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    Unhealthy / readiness-timeout: rows=4; mode=occurrence; observed occurrences=4 (exact)
+    Range: 2024-06-01T10:23:00.894000Z .. 2024-06-01T10:26:31.265000Z; evidence=evidence-945968b9ff17e7643a79c6e13ba0a72a8aa461f4608e9ff4e5076eabeb785b7a
+    Rule: supported recurrence; cause confidence=medium
+    Evidence record-09f04220e2fb36cb5c8c5c516e14bd03a8f031abf76b251be09e0db83fb1a222 (04-test-a.jsonl:15569): Readiness probe failed: Get \"http://10.244.12.148:8080/healthcheck\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+    Evidence record-4d4ba47aad8a3731b479a80f972b1ab44938b5bff8e6b23f3345b69b2c5eaa57 (04-test-a.jsonl:18042): Readiness probe failed: Get \"http://10.244.12.148:8080/healthcheck\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/checkout-service-7d4f8b9c5-cc6bb uid=d2fc250a-0d69-0741-69b2-414ba67c1b93 container=container/checkout affected nodes=node-5
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    Unhealthy / readiness-timeout: rows=5; mode=occurrence; observed occurrences=5 (exact)
+    Range: 2024-06-01T10:25:04.376000Z .. 2024-06-01T10:29:23.812000Z; evidence=evidence-bb1b3aeee03554f3bd8537e5a1cdf7ac1638eecb68f73694fe7796af9c7812c0
+    Rule: supported recurrence; cause confidence=medium
+    Evidence record-e15ea7abb83035b96af708a5f85568bfddda8cdb416478fd4b2acabef6eda100 (04-test-a.jsonl:17035): Readiness probe failed: Get \"http://10.244.13.247:8080/healthcheck\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+    Evidence record-4412e90eef465e1ab67440405aeb618bf59120553019095c749b65eba19134b1 (04-test-a.jsonl:19924): Readiness probe failed: Get \"http://10.244.13.247:8080/healthcheck\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/checkout-service-7d4f8b9c5-c257b uid=8466bc73-698f-8346-a916-535ac25dc97e container=container/checkout affected nodes=node-2
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    Unhealthy / readiness-timeout: rows=5; mode=occurrence; observed occurrences=5 (exact)
+    Range: 2024-06-01T10:23:58.206000Z .. 2024-06-01T10:29:55.424000Z; evidence=evidence-f013bb949a240a0d45af2cb7ccc335bfa960b3f99b52291eaca4ad741d02517d
+    Rule: supported recurrence; cause confidence=medium
+    Evidence record-4d400098bb8427a05025c3133e85bcdeb815254a2f581c5f5a91f600ac62820e (04-test-a.jsonl:16244): Readiness probe failed: Get \"http://10.244.1.25:8080/healthcheck\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+    Evidence record-c0a1410ffa9d16b73872ad5c43ef5161fd01db0b60a698a02fce57fd69a3cffe (04-test-a.jsonl:19988): Readiness probe failed: Get \"http://10.244.1.25:8080/healthcheck\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Association (node; high): affected-node association from resource/scheduling evidence on the same Pod UID; evidence=record-ad4a139a347874b88b253f04a41883504be7f8f18f66508c7ef9ae7f5a100888
+  Association (node; high): affected-node association from resource/scheduling evidence on the same Pod UID; evidence=record-c2e7931e196a13e9db4fd167df3799a8f0ad83fc9ea85eac3658f86749ed9d60
+  Association (node; high): affected-node association from resource/scheduling evidence on the same Pod UID; evidence=record-f9d2c9efbee4e19b69c7ec64a72ecedb5c236f1bd9cf22e40a40f647e23d3daa
+  Association (node; high): affected-node association from resource/scheduling evidence on the same Pod UID; evidence=record-abf0022c41600a5ea63fcedf0e918833eff30cb63dd190642d18076e0f355385
+  Association (rollout; medium): scale-up precedes failure onset within correlation threshold; temporal association is not proof of causation; evidence=record-d6d181ce6c2fe4e86b7c2aaf4e707b07af07d33d977181ec8e7bba0629b10184,record-03f8f292044e6b1b29a639e7cdf88378a92064489b3f4f8c0ec9e74624ea5961
+  Association (rollout; medium): scale-up precedes failure onset within correlation threshold; temporal association is not proof of causation; evidence=record-d6d181ce6c2fe4e86b7c2aaf4e707b07af07d33d977181ec8e7bba0629b10184,record-6149b836d9c57eef6aed2fd558ed995595de2a1ca07197ec32279aff21a96fec
+  Association (rollout; medium): scale-up precedes failure onset within correlation threshold; temporal association is not proof of causation; evidence=record-d6d181ce6c2fe4e86b7c2aaf4e707b07af07d33d977181ec8e7bba0629b10184,record-bdb1448ff81727539e2e087ccd419e6f5ff848686692e08a68351c635bc8d022
+Next verification: Inspect the specific probe, application logs and endpoint response before changing probe settings.
+
+[WARNING] checkout-service (workload; cluster=prod-us-east-1; namespace=production)
+Incident 3: incident-fbeeb513330803c15c714a5c18a7a4f7fc011b2482f6924333da0f50b574d235
+Affected objects: 1 | Event range: 2024-06-01T10:23:11.519000Z .. 2024-06-01T10:29:40.242000Z
+Pattern: recurrent observations; event types are not crash totals.
+Likely cause (confidence=medium): Readiness/liveness probes are failing; a probe URL alone does not establish an upstream cause. Recurrent observations are supported; uninterrupted outage or recovery is not established. An evidence-linked scale-up preceded failure onset; rollout causation remains a hypothesis.
+  Unhealthy: rows=4; mode=occurrence; observed occurrences=4 (exact)
+  Object Pod/checkout-service-7d4f8b9c5-005e2 uid=f0cba33e-5d91-a038-06ed-c41754cb35ff container=container/checkout affected nodes=node-2
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    Unhealthy / readiness-connection-refused: rows=4; mode=occurrence; observed occurrences=4 (exact)
+    Range: 2024-06-01T10:23:11.519000Z .. 2024-06-01T10:29:40.242000Z; evidence=evidence-7660645de23d5a82f84d83a9c4c29c3c0ca74d075ec2e4555837859fb24e0d96
+    Rule: supported recurrence; cause confidence=medium
+    Evidence record-7215cd7c2eefa8902370727912967e745d6848dcaf87baf1ecb611066d81496e (04-test-a.jsonl:15672): Readiness probe failed: Get \"http://10.244.12.148:8080/healthcheck\": dial tcp 10.244.12.148:8080: connect: connection refused
+    Evidence record-063892fb28ef9b2e0c25dc59419d5a88795db17a64c65b3d6326a282eb1e2ed1 (04-test-a.jsonl:19957): Readiness probe failed: Get \"http://10.244.12.148:8080/healthcheck\": dial tcp 10.244.12.148:8080: connect: connection refused
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Association (node; high): affected-node association from resource/scheduling evidence on the same Pod UID; evidence=record-f9d2c9efbee4e19b69c7ec64a72ecedb5c236f1bd9cf22e40a40f647e23d3daa
+  Association (rollout; medium): scale-up precedes failure onset within correlation threshold; temporal association is not proof of causation; evidence=record-d6d181ce6c2fe4e86b7c2aaf4e707b07af07d33d977181ec8e7bba0629b10184,record-bdb1448ff81727539e2e087ccd419e6f5ff848686692e08a68351c635bc8d022
+Next verification: Inspect the specific probe, application logs and endpoint response before changing probe settings.
+
+[WARNING] checkout-service (workload; cluster=prod-us-east-1; namespace=production)
+Incident 4: incident-cf8a1e1ee98363892299b6f23509d4cb0b3492c1d596013b4a17cae8aba5b604
+Affected objects: 1 | Event range: 2024-06-01T10:22:34.806000Z .. 2024-06-01T10:28:30.470000Z
+Pattern: recurrent observations; event types are not crash totals.
+Likely cause (confidence=medium): Readiness/liveness probes are failing; a probe URL alone does not establish an upstream cause. Recurrent observations are supported; uninterrupted outage or recovery is not established. An evidence-linked scale-up preceded failure onset; rollout causation remains a hypothesis.
+  Unhealthy: rows=6; mode=occurrence; observed occurrences=6 (exact)
+  Object Pod/checkout-service-7d4f8b9c5-c257b uid=8466bc73-698f-8346-a916-535ac25dc97e container=container/checkout affected nodes=node-2
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    Unhealthy / readiness-connection-refused: rows=6; mode=occurrence; observed occurrences=6 (exact)
+    Range: 2024-06-01T10:22:34.806000Z .. 2024-06-01T10:28:30.470000Z; evidence=evidence-3ed67b73fce0bb213451a43221ff9b80d6cc43445f7c97d1505e629e4a1d9ad2
+    Rule: supported recurrence; cause confidence=medium
+    Evidence record-2fce7dce52d6e27b334e3447ccf35eed4f2ac493dbcec4767b75a8525b7acb96 (04-test-a.jsonl:15263): Readiness probe failed: Get \"http://10.244.1.25:8080/healthcheck\": dial tcp 10.244.1.25:8080: connect: connection refused
+    Evidence record-763d4ed025eca4e0ae04e739e7d0ab8cca4d83b19d4948dba288934c9e616b79 (04-test-a.jsonl:19508): Readiness probe failed: Get \"http://10.244.1.25:8080/healthcheck\": dial tcp 10.244.1.25:8080: connect: connection refused
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Association (node; high): affected-node association from resource/scheduling evidence on the same Pod UID; evidence=record-c2e7931e196a13e9db4fd167df3799a8f0ad83fc9ea85eac3658f86749ed9d60
+  Association (rollout; medium): scale-up precedes failure onset within correlation threshold; temporal association is not proof of causation; evidence=record-d6d181ce6c2fe4e86b7c2aaf4e707b07af07d33d977181ec8e7bba0629b10184,record-6149b836d9c57eef6aed2fd558ed995595de2a1ca07197ec32279aff21a96fec
+Next verification: Inspect the specific probe, application logs and endpoint response before changing probe settings.
+
+[WARNING] checkout-service (workload; cluster=prod-us-east-1; namespace=production)
+Incident 5: incident-3ecf66ebe760b349494bbe75227504856fc1145d15bacefbcf6597ea6de1defd
+Affected objects: 1 | Event range: 2024-06-01T10:22:46.689000Z .. 2024-06-01T10:28:20.911000Z
+Pattern: recurrent observations; event types are not crash totals.
+Likely cause (confidence=medium): Readiness/liveness probes are failing; a probe URL alone does not establish an upstream cause. Recurrent observations are supported; uninterrupted outage or recovery is not established. An evidence-linked scale-up preceded failure onset; rollout causation remains a hypothesis.
+  Unhealthy: rows=3; mode=occurrence; observed occurrences=3 (exact)
+  Object Pod/checkout-service-7d4f8b9c5-cc6bb uid=d2fc250a-0d69-0741-69b2-414ba67c1b93 container=container/checkout affected nodes=node-5
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    Unhealthy / readiness-connection-refused: rows=3; mode=occurrence; observed occurrences=3 (exact)
+    Range: 2024-06-01T10:22:46.689000Z .. 2024-06-01T10:28:20.911000Z; evidence=evidence-532c0a4d01bf1ef7e6a94cd853fa8e5d66bff48f83f9056588567859375b252f
+    Rule: supported recurrence; cause confidence=medium
+    Evidence record-d8eacf50425c588a97a65113b5e8f762fec7c195a39e4fcfd9102963cebfadfa (04-test-a.jsonl:15399): Readiness probe failed: Get \"http://10.244.13.247:8080/healthcheck\": dial tcp 10.244.13.247:8080: connect: connection refused
+    Evidence record-c90a58a345645877f75f402b17c05b012101ffbd5a2a1a7dba169e3c8841ffd2 (04-test-a.jsonl:19416): Readiness probe failed: Get \"http://10.244.13.247:8080/healthcheck\": dial tcp 10.244.13.247:8080: connect: connection refused
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Association (node; high): affected-node association from resource/scheduling evidence on the same Pod UID; evidence=record-abf0022c41600a5ea63fcedf0e918833eff30cb63dd190642d18076e0f355385
+  Association (rollout; medium): scale-up precedes failure onset within correlation threshold; temporal association is not proof of causation; evidence=record-d6d181ce6c2fe4e86b7c2aaf4e707b07af07d33d977181ec8e7bba0629b10184,record-70d836990a8e786b2c620464d3cb16eddd100b705b3b9abac5a4c1eacdf1a5b2
+Next verification: Inspect the specific probe, application logs and endpoint response before changing probe settings.
+
+[WARNING] checkout-service (workload; cluster=prod-us-east-1; namespace=production)
+Incident 6: incident-6a24e626d1c65fe6fd52e7ecb432660515eb42f96e9234216b271f1245cca042
+Affected objects: 1 | Event range: 2024-06-01T10:24:24.904000Z .. 2024-06-01T10:28:48.259000Z
+Pattern: recurrent observations; event types are not crash totals.
+Likely cause (confidence=medium): Readiness/liveness probes are failing; a probe URL alone does not establish an upstream cause. Recurrent observations are supported; uninterrupted outage or recovery is not established.
+  Unhealthy: rows=7; mode=occurrence; observed occurrences=7 (exact)
+  Object Pod/checkout-service-7d4f8b9c5-272a1 uid=8b3679b0-b9a3-58fe-dea7-a9843fec6736 container=container/checkout affected nodes=node-2
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    Unhealthy / readiness-connection-refused: rows=7; mode=occurrence; observed occurrences=7 (exact)
+    Range: 2024-06-01T10:24:24.904000Z .. 2024-06-01T10:28:48.259000Z; evidence=evidence-792b765b7c6ff416672cc04efb7813778b45a927d64f47d64720967516f1f3d0
+    Rule: supported recurrence; cause confidence=medium
+    Evidence record-3f184a7c45dc4757657093af00bec098e97596fe0129b5ded95ca89f096bdb86 (04-test-a.jsonl:16580): Readiness probe failed: Get \"http://10.244.14.127:8080/healthcheck\": dial tcp 10.244.14.127:8080: connect: connection refused
+    Evidence record-9e14d941f8f38947ae46739e98fce60c0bd89d20633906f1788da572df4b0f2e (04-test-a.jsonl:19751): Readiness probe failed: Get \"http://10.244.14.127:8080/healthcheck\": dial tcp 10.244.14.127:8080: connect: connection refused
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Association (node; high): affected-node association from resource/scheduling evidence on the same Pod UID; evidence=record-ad4a139a347874b88b253f04a41883504be7f8f18f66508c7ef9ae7f5a100888
+Next verification: Inspect the specific probe, application logs and endpoint response before changing probe settings.
+
+[WARNING] checkout-service (workload; cluster=prod-us-east-1; namespace=production)
+Incident 7: incident-4c4cc7a07d424fce81b33677221223382dc7e666fffc913890d297b1367d1099
+Affected objects: 1 | Event range: 2024-06-01T10:24:53.297000Z .. 2024-06-01T10:28:00.160000Z
+Pattern: recurrent observations; event types are not crash totals.
+Likely cause (confidence=medium): Readiness/liveness probes are failing; a probe URL alone does not establish an upstream cause. Recurrent observations are supported; uninterrupted outage or recovery is not established.
+  Unhealthy: rows=4; mode=occurrence; observed occurrences=4 (exact)
+  Object Pod/checkout-service-7d4f8b9c5-7f871 uid=b2534dbd-9a3f-0c2e-3715-4f15e1507b7a container=container/checkout affected nodes=node-3
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    Unhealthy / readiness-connection-refused: rows=4; mode=occurrence; observed occurrences=4 (exact)
+    Range: 2024-06-01T10:24:53.297000Z .. 2024-06-01T10:28:00.160000Z; evidence=evidence-eb42de5203692df47fdd468f32d99eac83a2854ee6b2f52d54e5c521cc651a03
+    Rule: supported recurrence; cause confidence=medium
+    Evidence record-2b9a7624d19bce25c25f7fbbc75a61bf11ae2d5afef58533525add2c92d64621 (04-test-a.jsonl:16902): Readiness probe failed: Get \"http://10.244.11.243:8080/healthcheck\": dial tcp 10.244.11.243:8080: connect: connection refused
+    Evidence record-46002c1a47d867d14221fe3726495f0cabb093c96ca1c73e707634b7a3f2af4e (04-test-a.jsonl:19219): Readiness probe failed: Get \"http://10.244.11.243:8080/healthcheck\": dial tcp 10.244.11.243:8080: connect: connection refused
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Association (node; high): affected-node association from resource/scheduling evidence on the same Pod UID; evidence=record-ada2f7b52ab868103c70600e39837fb5345f7a334d272f8ef90352c981669287
+Next verification: Inspect the specific probe, application logs and endpoint response before changing probe settings.
+
+Nonreportable observations: 4 (full evidence retained in JSON)
+  data-pipeline-91aeea497-6556b / Evicted: rows=1; mode=occurrence; observed occurrences=1 (exact); transient or insufficient independent evidence; evidence=evidence-b07a6b5b2e202659e77c8d2736f93af7146df0c03fdb8860fc76f8ca4798eec8
+  auth-service-de7746487-0141c / FailedMount: rows=1; mode=occurrence; observed occurrences=1 (exact); transient or insufficient independent evidence; evidence=evidence-d1a7e2fa48249aec93e88796c4c11f43e30bbe8b6c28f17b01c7a1cc2fd8d81b
+  data-pipeline-04f75f6aa-92624 / Unhealthy: rows=3; mode=occurrence; observed occurrences=3 (exact); transient or insufficient independent evidence; evidence=evidence-87c345fc40196a9c9aed1d85c59ed35a384c0c0db577ead30f54b44a29f16506
+  checkout-service-7d4f8b9c5-7f871 / Unhealthy: rows=2; mode=occurrence; observed occurrences=2 (exact); transient or insufficient independent evidence; evidence=evidence-75f5cb90f34911d975479615cf01d97e2a2dc4eede6ef5d606f5116a619af860

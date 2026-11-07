@@ -1,0 +1,33 @@
+{
+  "python": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+  "source_sha256": {
+    "src/k8s_event_triage/__init__.py": "f269bb9b728f375b84f06b5ec5246073dfe5e1f36b316b8a906bad104f8663b2",
+    "src/k8s_event_triage/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/k8s_event_triage/classify.py": "ab162cdba2447257055303c927c36ef8f245f2939a55f53e35fc24bc42513b1d",
+    "src/k8s_event_triage/cli.py": "ccdfb9b62da640edd3ce7768faf83b8535f82e85af7baf32e70e3b57389491cf",
+    "src/k8s_event_triage/correlate.py": "7c75716685c2c8319144a5328e2923dcd3fdb57856bdd243d1f5fa11de9f69aa",
+    "src/k8s_event_triage/group.py": "4c2c35398014e08c35f594595f18b970a4d7da99e4534b57990ad68ba38b54cd",
+    "src/k8s_event_triage/model.py": "ee0575ba340cbf30ed97c45948fc10c539a527752945c44a391fad2619216d10",
+    "src/k8s_event_triage/parse.py": "22477d8a45c0fd93efa0044e202df29d209f5e4423de7745b18715117c991b0a",
+    "src/k8s_event_triage/policy.py": "a805e25a7a46bfd89a9581dcd88d36cfcb92efab6199c1a085598de963be32b5",
+    "src/k8s_event_triage/render.py": "50584630d3cb5737e7ecd8b4eca5e66dd97b17654516e6a42ee9d9be27ffaf60"
+  },
+  "dependency_lock_sha256": "0f2cd63f57e1e714d3d86aebcabe33a97917af34e1ffdd74ceda1fda35b4cc4a",
+  "os": "Windows-11-10.0.26300-SP0",
+  "windows_version": [
+    "11",
+    "10.0.26300",
+    "SP0",
+    "Multiprocessor Free"
+  ],
+  "machine": "AMD64",
+  "cpu": "AMD Ryzen 7 4800H with Radeon Graphics",
+  "logical_processors": 16,
+  "nominal_mhz_registry": 2895,
+  "physical_memory_bytes": 16556650496,
+  "available_memory_bytes_at_start": 1275035648,
+  "cache_limitations": "First recorded launch per input/format, not a cold-cache claim; validation already touched inputs. No cache flush, affinity or exclusive-host claim.",
+  "timing_method": "perf_counter before Popen through communicate; startup, read, analysis, render and pipe-byte capture included. Evidence hashing/persistence happens afterward.",
+  "rss_method": "Maximum observed live OS PeakWorkingSetSize across launcher/interpreter descendants; requested 1ms waits, descendants discovered every 20ms. Also records maximum simultaneous tree WorkingSetSize. Late peaks/brief descendants may be missed; monitor overhead included; parent capture buffers excluded.",
+  "wmi_access": "Not queried; CPU registry and native memory API used instead"
+}

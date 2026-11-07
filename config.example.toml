@@ -1,0 +1,11 @@
+# Optional explicit configuration. Omitting --config uses these same defaults.
+count_mode = "auto"
+episode_gap_seconds = 600
+recurrence_count = 3
+recurrence_span_seconds = 120
+correlation_seconds = 120
+corroboration_objects = 2
+corroboration_observations = 3
+max_records = 100000
+max_input_bytes = 134217728
+max_line_bytes = 65536

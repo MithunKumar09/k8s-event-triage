@@ -1,0 +1,24 @@
+# Private assessment governance and local tooling; configure before first commit.
+/.internal/
+/BASE14_INTERNAL_ASSESSMENT_HANDOVER.md
+/BASE14_PHASE1_ARCHITECTURE_BLUEPRINT.md
+/sre-platform-engineering-challenge.pdf
+/.agents/
+/.codex/
+/.aws/
+/.env
+/.env.*
+!/.env.example
+/.venv/
+/dist/
+/build/
+*.egg-info/
+__pycache__/
+*.py[cod]
+/.pytest_cache/
+/.mypy_cache/
+/.ruff_cache/
+/.coverage
+/htmlcov/
+/coverage.xml
+# ANALYSIS.md, outputs/, and private test-cases/ are deliberately trackable.

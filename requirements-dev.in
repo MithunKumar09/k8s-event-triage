@@ -1,0 +1,12 @@
+pytest
+pytest-cov
+ruff
+mypy
+build
+hatchling
+# Required by Hatchling's PEP 660 editable build (Make install).
+editables
+pip-tools
+pip-audit
+# Development installer security correction; no CLI runtime dependency.
+pip==26.2.1

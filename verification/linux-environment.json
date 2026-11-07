@@ -1,0 +1,24 @@
+{
+  "python": "3.12.16 (main, Nov  5 2026, 07:58:44) [GCC 12.2.0]",
+  "os": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.36",
+  "machine": "x86_64",
+  "logical_processors": 16,
+  "cpuinfo": "processor\t: 0\nvendor_id\t: AuthenticAMD\ncpu family\t: 23\nmodel\t\t: 96\nmodel name\t: AMD Ryzen 7 4800H with Radeon Graphics\nstepping\t: 1\nmicrocode\t: 0xffffffff\ncpu MHz\t\t: 2894.585\ncache size\t: 512 KB\nphysical id\t: 0\nsiblings\t: 16\ncore id\t\t: 0\ncpu cores\t: 8\napicid\t\t: 0\ninitial apicid\t: 0\nfpu\t\t: yes\nfpu_exception\t: yes\ncpuid level\t: 13\nwp\t\t: yes\nflags\t\t: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core ssbd ibrs ibpb stibp vmmcall fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat umip rdpid\nbugs\t\t: sysret_ss_attrs null_seg spectre_v1 spectre_v2 spec_store_bypass retbleed smt_rsb srso ibpb_no_ret spectre_v2_user\nbogomips\t: 5789.17\nTLB size\t: 3072 4K pages\nclflush size\t: 64\ncache_alignment\t: 64\naddress sizes\t: 48 bits physical, 48 bits virtual\npower management:",
+  "memoryinfo": "MemTotal:        7831460 kB\nMemFree:          863684 kB\nMemAvailable:    4457664 kB\nBuffers:          308452 kB\nCached:          3363508 kB\nSwapCached:            0 kB\nActive:          1163608 kB\nInactive:        4640708 kB\nActive(anon):      33520 kB\nInactive(anon):  2338712 kB\nActive(file):    1130088 kB\nInactive(file):  2301996 kB\nUnevictable:          16 kB\nMlocked:              16 kB\nSwapTotal:       2097152 kB\nSwapFree:        2097152 kB\nDirty:               140 kB\nWriteback:             0 kB\nAnonPages:       2132800 kB\nMapped:           901784 kB\nShmem:            239952 kB\nKReclaimable:     357328 kB\nSlab:             489968 kB\nSReclaimable:     357328 kB\nSUnreclaim:       132640 kB\nKernelStack:       18064 kB\nPageTables:        38104 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     6012880 kB\nCommitted_AS:    8988076 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       48020 kB\nVmallocChunk:          0 kB\nPercpu:             8384 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:     26624 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       62464 kB\nDirectMap2M:     5922816 kB\nDirectMap1G:    10485760 kB\n",
+  "rss_method": "Live /proc/PID/status VmHWM, requested 1ms samples; late peaks may be missed. CLI is one interpreter process; parent capture buffers excluded.",
+  "cache_limitations": "No cold-cache, exclusive-host or fixed-power claim.",
+  "timing_method": "Before Popen through communicate, including startup/analysis/render/pipe capture; evidence hashing/persistence afterward.",
+  "source_sha256": {
+    "src/k8s_event_triage/__init__.py": "f269bb9b728f375b84f06b5ec5246073dfe5e1f36b316b8a906bad104f8663b2",
+    "src/k8s_event_triage/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/k8s_event_triage/classify.py": "ab162cdba2447257055303c927c36ef8f245f2939a55f53e35fc24bc42513b1d",
+    "src/k8s_event_triage/cli.py": "ccdfb9b62da640edd3ce7768faf83b8535f82e85af7baf32e70e3b57389491cf",
+    "src/k8s_event_triage/correlate.py": "7c75716685c2c8319144a5328e2923dcd3fdb57856bdd243d1f5fa11de9f69aa",
+    "src/k8s_event_triage/group.py": "4c2c35398014e08c35f594595f18b970a4d7da99e4534b57990ad68ba38b54cd",
+    "src/k8s_event_triage/model.py": "ee0575ba340cbf30ed97c45948fc10c539a527752945c44a391fad2619216d10",
+    "src/k8s_event_triage/parse.py": "22477d8a45c0fd93efa0044e202df29d209f5e4423de7745b18715117c991b0a",
+    "src/k8s_event_triage/policy.py": "a805e25a7a46bfd89a9581dcd88d36cfcb92efab6199c1a085598de963be32b5",
+    "src/k8s_event_triage/render.py": "50584630d3cb5737e7ecd8b4eca5e66dd97b17654516e6a42ee9d9be27ffaf60"
+  },
+  "dependency_lock_sha256": "0f2cd63f57e1e714d3d86aebcabe33a97917af34e1ffdd74ceda1fda35b4cc4a"
+}

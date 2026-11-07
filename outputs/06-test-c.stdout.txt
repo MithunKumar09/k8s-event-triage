@@ -1,0 +1,178 @@
+KUBERNETES CLUSTER EVENT TRIAGE
+Records ingested: 20,000 | Filtered as noise: 12,760 | Context: 7,058 | Issues: 2
+Count mode: auto | Policy SHA-256: b4403ae5c7861b5a1d061c2de91f8176b91cd8467d9bfbd8f4eb755593968509
+Input SHA-256: 33c77616414301f2130ffba7246cfbda6f1e9ab9006775c5aff833b3d3927843 | Repeated-payload candidates: 0
+
+[WARNING] data-pipeline (workload; cluster=prod-us-east-1; namespace=data)
+Incident 1: incident-96c9da6ff2cb24f6aae77c93ce14f229150ec86088848683d32b9b15e7ee911b
+Affected objects: 6 | Event range: 2024-06-01T10:20:04.679000Z .. 2024-06-01T10:29:59.677000Z
+Pattern: recurrent observations; event types are not crash totals.
+Likely cause (confidence=medium): The scheduler reports placement constraints; preserve CPU, memory, taint and affinity distinctions. Recurrent observations are supported; uninterrupted outage or recovery is not established. An evidence-linked scale-up preceded failure onset; rollout causation remains a hypothesis.
+  FailedScheduling: rows=133; mode=occurrence; observed occurrences=133 (exact)
+  Object Pod/data-pipeline-3c7d2e1a9-83990 uid=937e1e20-c3be-7c96-0d06-6d5411224146 container=unknown affected nodes=unknown
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    FailedScheduling / constraints: rows=21; mode=occurrence; observed occurrences=21 (exact)
+    Range: 2024-06-01T10:20:04.679000Z .. 2024-06-01T10:29:42.974000Z; evidence=evidence-057deda03a0250ab73c5e4c9454170d8f6e3b4afdfce781279e7fb8c4f652dcc
+    Rule: multiple objects report compatible explicit scheduler constraints; cause confidence=medium
+    Evidence record-eb256caeebee230c495ec9e9a6c25438c4291fb2ff2884c55e070e0071f16948 (06-test-c.jsonl:13398): 0/6 nodes are available: 6 Insufficient cpu. preemption: 0/6 nodes are available: 6 No preemption victims found for incoming pod, 6 Preemption is not helpful for scheduling.
+    Evidence record-b38d700b0e5de5b2f30d75e5dab9b80495bc8dcff7c29733109d9045fdc3ba26 (06-test-c.jsonl:19967): 0/6 nodes are available: 6 Insufficient cpu. preemption: 0/6 nodes are available: 6 No preemption victims found for incoming pod, 6 Preemption is not helpful for scheduling.
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/data-pipeline-3c7d2e1a9-ff798 uid=2be30082-d135-3bf4-7f58-4b78632ae469 container=unknown affected nodes=unknown
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    FailedScheduling / constraints: rows=2; mode=occurrence; observed occurrences=2 (exact)
+    Range: 2024-06-01T10:25:28.959000Z .. 2024-06-01T10:29:55.229000Z; evidence=evidence-0f53822f3e76879177171375722bbe5c3c6b74a40fb326d9d8950e1941bac9a4
+    Rule: multiple objects report compatible explicit scheduler constraints; cause confidence=medium
+    Evidence record-051dab61c937667179d75cac15befc623fdd203711305b12d3d1e4e6dac2e39a (06-test-c.jsonl:17346): 0/6 nodes are available: 6 Insufficient cpu. preemption: 0/6 nodes are available: 6 Preemption is not helpful for scheduling.
+    Evidence record-1818373765d9e9d0e6f1a3bfe1221338cf26765faa5c35181391991a6a06efb3 (06-test-c.jsonl:19989): 0/6 nodes are available: 6 Insufficient cpu. preemption: 0/6 nodes are available: 6 Preemption is not helpful for scheduling.
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/data-pipeline-3c7d2e1a9-ae67b uid=314f1b99-da7b-189d-205e-2246e548e8c2 container=unknown affected nodes=unknown
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    FailedScheduling / constraints: rows=4; mode=occurrence; observed occurrences=4 (exact)
+    Range: 2024-06-01T10:22:14.902000Z .. 2024-06-01T10:29:19.596000Z; evidence=evidence-33fb3155d6be33161825af4675fa67adb108ade657c5969c5c7ca158e5414bb8
+    Rule: multiple objects report compatible explicit scheduler constraints; cause confidence=medium
+    Evidence record-31aec89c2f79149ce928ed89d9b824e04a69efbce9597f7e512427934596166e (06-test-c.jsonl:15099): 0/6 nodes are available: 6 Insufficient cpu. preemption: 0/6 nodes are available: 6 Preemption is not helpful for scheduling.
+    Evidence record-fc890d0ccf26030afe4fd32fe1fa626c0082c465d42bb859537d5ea4aa4df29e (06-test-c.jsonl:19917): 0/6 nodes are available: 6 Insufficient cpu. preemption: 0/6 nodes are available: 6 Preemption is not helpful for scheduling.
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/data-pipeline-3c7d2e1a9-6c9db uid=6f98ab01-7ee3-8f06-cf37-ec424ebe7a18 container=unknown affected nodes=unknown
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    FailedScheduling / constraints: rows=19; mode=occurrence; observed occurrences=19 (exact)
+    Range: 2024-06-01T10:20:10.248000Z .. 2024-06-01T10:29:22.272000Z; evidence=evidence-437cb4c8650084e80b05d115ff1fe97331f3527c18d216c92a98d02fd82cfa86
+    Rule: multiple objects report compatible explicit scheduler constraints; cause confidence=medium
+    Evidence record-61278a6d153ba83c1e730e2dec72c6c21057185fb319b457c4740a0199d3a9a2 (06-test-c.jsonl:13500): 0/6 nodes are available: 6 Insufficient cpu. preemption: 0/6 nodes are available: 6 No preemption victims found for incoming pod, 6 Preemption is not helpful for scheduling.
+    Evidence record-7f5c38e6ae551d2f2f925177477dc64be32088679c9fd000a6d69cd909534c79 (06-test-c.jsonl:19924): 0/6 nodes are available: 6 Insufficient cpu. preemption: 0/6 nodes are available: 6 No preemption victims found for incoming pod, 6 Preemption is not helpful for scheduling.
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/data-pipeline-3c7d2e1a9-49cdd uid=ebac89cf-42a2-2866-8294-5b2250e9a795 container=unknown affected nodes=unknown
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    FailedScheduling / constraints: rows=2; mode=occurrence; observed occurrences=2 (exact)
+    Range: 2024-06-01T10:25:03.027000Z .. 2024-06-01T10:26:19.344000Z; evidence=evidence-4ac839b4f13c2884a71be1693a08becbdd2ab9c1513bc100e743bf5ddfb3ee92
+    Rule: multiple objects report compatible explicit scheduler constraints; cause confidence=medium
+    Evidence record-6c3dc9d5945cc4207cad38f8d7c0376d015f17659a520f46403dbe22cf474316 (06-test-c.jsonl:17000): 0/6 nodes are available: 6 Insufficient cpu. preemption: 0/6 nodes are available: 6 Preemption is not helpful for scheduling.
+    Evidence record-e14214565ef6c14295e23902861980e9eab345455fb6ea47eb3f4e9cfb7ac4b4 (06-test-c.jsonl:17892): 0/6 nodes are available: 6 Insufficient cpu. preemption: 0/6 nodes are available: 6 Preemption is not helpful for scheduling.
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/data-pipeline-3c7d2e1a9-6c9db uid=6f98ab01-7ee3-8f06-cf37-ec424ebe7a18 container=unknown affected nodes=unknown
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    FailedScheduling / constraints: rows=1; mode=occurrence; observed occurrences=1 (exact)
+    Range: 2024-06-01T10:26:59.823000Z .. 2024-06-01T10:26:59.823000Z; evidence=evidence-684f147f68191726c0d9ef12baacfc7eeb709279e347e02d711fb72e8632d587
+    Rule: multiple objects report compatible explicit scheduler constraints; cause confidence=medium
+    Evidence record-4ba989db1dc6a69f3813479b51fc683ed5e75136e218e95887cd23f8616d6df0 (06-test-c.jsonl:18411): 0/6 nodes are available: 6 Insufficient cpu. preemption: 0/6 nodes are available: 6 Preemption is not helpful for scheduling.
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/data-pipeline-3c7d2e1a9-ff798 uid=2be30082-d135-3bf4-7f58-4b78632ae469 container=unknown affected nodes=unknown
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    FailedScheduling / constraints: rows=21; mode=occurrence; observed occurrences=21 (exact)
+    Range: 2024-06-01T10:20:24.639000Z .. 2024-06-01T10:29:34.620000Z; evidence=evidence-722901a21eaaca0eb23f938dcd5530e35dc6cc48954cb202890930cb5994df79
+    Rule: multiple objects report compatible explicit scheduler constraints; cause confidence=medium
+    Evidence record-35d27316e5a45f669a5f9fd14d8e70bac6e733bed9f08e2dcb88e75dda0d50bb (06-test-c.jsonl:13662): 0/6 nodes are available: 6 Insufficient cpu. preemption: 0/6 nodes are available: 6 No preemption victims found for incoming pod, 6 Preemption is not helpful for scheduling.
+    Evidence record-5c631949caf47bd4df66d68cf42daecb99df9d79688a9485316178c2de09d6a6 (06-test-c.jsonl:19951): 0/6 nodes are available: 6 Insufficient cpu. preemption: 0/6 nodes are available: 6 No preemption victims found for incoming pod, 6 Preemption is not helpful for scheduling.
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/data-pipeline-3c7d2e1a9-49cdd uid=ebac89cf-42a2-2866-8294-5b2250e9a795 container=unknown affected nodes=unknown
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    FailedScheduling / constraints: rows=24; mode=occurrence; observed occurrences=24 (exact)
+    Range: 2024-06-01T10:20:06.008000Z .. 2024-06-01T10:29:59.677000Z; evidence=evidence-8d44bdf82755842294701dda7d74c1ff0a1c0717bffd695ff5339382b6b399d0
+    Rule: multiple objects report compatible explicit scheduler constraints; cause confidence=medium
+    Evidence record-b665b9157da70de372f0de7e26fcbbc56152f41b7807f3cea49e15059d3d4e3c (06-test-c.jsonl:13424): 0/6 nodes are available: 6 Insufficient cpu. preemption: 0/6 nodes are available: 6 No preemption victims found for incoming pod, 6 Preemption is not helpful for scheduling.
+    Evidence record-a2844fa82cf9ce87740e72e19350ea0b49aa90599f91d777652cba7cdadb0c61 (06-test-c.jsonl:20000): 0/6 nodes are available: 6 Insufficient cpu. preemption: 0/6 nodes are available: 6 No preemption victims found for incoming pod, 6 Preemption is not helpful for scheduling.
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/data-pipeline-3c7d2e1a9-ae67b uid=314f1b99-da7b-189d-205e-2246e548e8c2 container=unknown affected nodes=unknown
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    FailedScheduling / constraints: rows=16; mode=occurrence; observed occurrences=16 (exact)
+    Range: 2024-06-01T10:20:07.799000Z .. 2024-06-01T10:29:41.373000Z; evidence=evidence-a383759a65314db26c0f3fc2f74eb01418474da2310694906cd7c229efadce81
+    Rule: multiple objects report compatible explicit scheduler constraints; cause confidence=medium
+    Evidence record-51b2fc079951992f7ef5676fd91990ef1c0b3c1b08369fdfb2695c1748ff4164 (06-test-c.jsonl:13446): 0/6 nodes are available: 6 Insufficient cpu. preemption: 0/6 nodes are available: 6 No preemption victims found for incoming pod, 6 Preemption is not helpful for scheduling.
+    Evidence record-c1920f51fba896fe4e74cfe4ebee50dac760b28c050619e11171844e2df485ec (06-test-c.jsonl:19964): 0/6 nodes are available: 6 Insufficient cpu. preemption: 0/6 nodes are available: 6 No preemption victims found for incoming pod, 6 Preemption is not helpful for scheduling.
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/data-pipeline-3c7d2e1a9-23bb0 uid=b9af2f6d-e1f2-0fa9-fa60-37bfa6bcacda container=unknown affected nodes=unknown
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    FailedScheduling / constraints: rows=5; mode=occurrence; observed occurrences=5 (exact)
+    Range: 2024-06-01T10:20:08.137000Z .. 2024-06-01T10:29:21.242000Z; evidence=evidence-bff73a0b8babf78d4e4de187e0c8d870b486123e5e2451990a4973f579d8fc95
+    Rule: multiple objects report compatible explicit scheduler constraints; cause confidence=medium
+    Evidence record-6d931fb0c22bf4f4aeb81c2fbadd8cc6861fa664b90c074b4b211242352c3fd9 (06-test-c.jsonl:13452): 0/6 nodes are available: 6 Insufficient cpu. preemption: 0/6 nodes are available: 6 Preemption is not helpful for scheduling.
+    Evidence record-9f6990b0d80bc59f2b2bdf664cbacaa2d98fb788bd9d5481fe4043645cf2b8e9 (06-test-c.jsonl:19922): 0/6 nodes are available: 6 Insufficient cpu. preemption: 0/6 nodes are available: 6 Preemption is not helpful for scheduling.
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/data-pipeline-3c7d2e1a9-23bb0 uid=b9af2f6d-e1f2-0fa9-fa60-37bfa6bcacda container=unknown affected nodes=unknown
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    FailedScheduling / constraints: rows=17; mode=occurrence; observed occurrences=17 (exact)
+    Range: 2024-06-01T10:20:28.903000Z .. 2024-06-01T10:28:39.598000Z; evidence=evidence-cfb3439819f2f8fb6ae77c272bdeeb011c3be4938d1e103bcf381b4296a1fe78
+    Rule: multiple objects report compatible explicit scheduler constraints; cause confidence=medium
+    Evidence record-a549b8d89d0428227916526be633a33225f24d591f7134d68ec1997ea0af3963 (06-test-c.jsonl:13711): 0/6 nodes are available: 6 Insufficient cpu. preemption: 0/6 nodes are available: 6 No preemption victims found for incoming pod, 6 Preemption is not helpful for scheduling.
+    Evidence record-adf5a078fe10e337225f8e7023505e4c6c3fe90f1d61537f78d658a26d231d5e (06-test-c.jsonl:19628): 0/6 nodes are available: 6 Insufficient cpu. preemption: 0/6 nodes are available: 6 No preemption victims found for incoming pod, 6 Preemption is not helpful for scheduling.
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/data-pipeline-3c7d2e1a9-83990 uid=937e1e20-c3be-7c96-0d06-6d5411224146 container=unknown affected nodes=unknown
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    FailedScheduling / constraints: rows=1; mode=occurrence; observed occurrences=1 (exact)
+    Range: 2024-06-01T10:21:04.503000Z .. 2024-06-01T10:21:04.503000Z; evidence=evidence-d3ad87d5afc41cce86de1cb6e302793e8fd651519a01ca2e488d330d9a162b24
+    Rule: multiple objects report compatible explicit scheduler constraints; cause confidence=medium
+    Evidence record-97e5852366deb4ac3d703e6ffb7ae1a85a7066079c63ef8df0f5538f8411599a (06-test-c.jsonl:14196): 0/6 nodes are available: 6 Insufficient cpu. preemption: 0/6 nodes are available: 6 Preemption is not helpful for scheduling.
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Association (rollout; medium): scale-up precedes failure onset within correlation threshold; temporal association is not proof of causation; evidence=record-4ce1f9a22c072e4ef3f7fdbdb6703b5f7245bbd86eeb2b879c60678254ba7076,record-51a6a2ae7b878b8df2708155021dce114c0e61c309acb208415d50a47a6a353c
+  Association (rollout; medium): scale-up precedes failure onset within correlation threshold; temporal association is not proof of causation; evidence=record-4ce1f9a22c072e4ef3f7fdbdb6703b5f7245bbd86eeb2b879c60678254ba7076,record-700378cd5bab30a89b9148bd61b5d316b9869d35f6287a7b18b463c3f27058ec
+  Association (rollout; medium): scale-up precedes failure onset within correlation threshold; temporal association is not proof of causation; evidence=record-4ce1f9a22c072e4ef3f7fdbdb6703b5f7245bbd86eeb2b879c60678254ba7076,record-8650508a6b870949c527003fa13d5050178cab4b68c930e1332a20fc34d2e4be
+  Association (rollout; medium): scale-up precedes failure onset within correlation threshold; temporal association is not proof of causation; evidence=record-4ce1f9a22c072e4ef3f7fdbdb6703b5f7245bbd86eeb2b879c60678254ba7076,record-c4862a91cbac8e4e42e52cb014560750716620f867557c9f5a3c73fbb5ef3d62
+  Association (rollout; medium): scale-up precedes failure onset within correlation threshold; temporal association is not proof of causation; evidence=record-4ce1f9a22c072e4ef3f7fdbdb6703b5f7245bbd86eeb2b879c60678254ba7076,record-d7416bc6a4d1a496ac653a7c6240e210febe383ad38e21993c59fdc1f3eb5b14
+  Association (rollout; medium): scale-up precedes failure onset within correlation threshold; temporal association is not proof of causation; evidence=record-4ce1f9a22c072e4ef3f7fdbdb6703b5f7245bbd86eeb2b879c60678254ba7076,record-e00b3abc61a50c0c28f2690268b513ced7f4017f73b5d4f5f2582f5239c4dbeb
+Next verification: Compare Pod requests, node allocatable capacity, taints and scheduling constraints.
+
+[WARNING] data-pipeline (workload; cluster=prod-us-east-1; namespace=data)
+Incident 2: incident-259f772976002b3acc6dae0ffbb3d5609047b74bcdd0904d440d2347fac47d8b
+Affected objects: 6 | Event range: 2024-06-01T10:20:05.527000Z .. 2024-06-01T10:29:44.487000Z
+Pattern: recurrent observations; event types are not crash totals.
+Likely cause (confidence=medium): The scheduler reports placement constraints; preserve CPU, memory, taint and affinity distinctions. Recurrent observations are supported; uninterrupted outage or recovery is not established. An evidence-linked scale-up preceded failure onset; rollout causation remains a hypothesis.
+  FailedScheduling: rows=44; mode=occurrence; observed occurrences=44 (exact)
+  Object Pod/data-pipeline-3c7d2e1a9-83990 uid=937e1e20-c3be-7c96-0d06-6d5411224146 container=unknown affected nodes=unknown
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    FailedScheduling / constraints: rows=7; mode=occurrence; observed occurrences=7 (exact)
+    Range: 2024-06-01T10:24:10.925000Z .. 2024-06-01T10:29:02.621000Z; evidence=evidence-0c02baf842c37b3102d1f896c27111463eeda1c02941120707a65908f2ed578c
+    Rule: multiple objects report compatible explicit scheduler constraints; cause confidence=medium
+    Evidence record-3d97438716d1f95f40c1b4cec80ebd4ecf929e1509df0c64804324ec5a656fa2 (06-test-c.jsonl:16426): 0/6 nodes are available: 3 Insufficient cpu, 3 Insufficient memory. preemption: 0/6 nodes are available: 6 No preemption victims found for incoming pod.
+    Evidence record-ef7a9de81c97d02e860d74f5a6461ef2bff4b12fb5d5339945739b6a71d39483 (06-test-c.jsonl:19879): 0/6 nodes are available: 3 Insufficient cpu, 3 Insufficient memory. preemption: 0/6 nodes are available: 6 No preemption victims found for incoming pod.
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/data-pipeline-3c7d2e1a9-23bb0 uid=b9af2f6d-e1f2-0fa9-fa60-37bfa6bcacda container=unknown affected nodes=unknown
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    FailedScheduling / constraints: rows=7; mode=occurrence; observed occurrences=7 (exact)
+    Range: 2024-06-01T10:21:09.907000Z .. 2024-06-01T10:29:41.021000Z; evidence=evidence-1c18d91dab0ca67f004a25be45b385da6a214ff2374e2bc4a5254da07a6feab3
+    Rule: multiple objects report compatible explicit scheduler constraints; cause confidence=medium
+    Evidence record-726a9f8cc11371cc8a5d464876d756b70056dcf915d8e81f1bd83a74c8a60ad3 (06-test-c.jsonl:14266): 0/6 nodes are available: 3 Insufficient cpu, 3 Insufficient memory. preemption: 0/6 nodes are available: 6 No preemption victims found for incoming pod.
+    Evidence record-d6fdf5a19eee0d58ce18d95c980e8c3369c6c4153b05d854cbb30f3a031010c5 (06-test-c.jsonl:19963): 0/6 nodes are available: 3 Insufficient cpu, 3 Insufficient memory. preemption: 0/6 nodes are available: 6 No preemption victims found for incoming pod.
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/data-pipeline-3c7d2e1a9-6c9db uid=6f98ab01-7ee3-8f06-cf37-ec424ebe7a18 container=unknown affected nodes=unknown
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    FailedScheduling / constraints: rows=9; mode=occurrence; observed occurrences=9 (exact)
+    Range: 2024-06-01T10:21:14.433000Z .. 2024-06-01T10:29:44.487000Z; evidence=evidence-8dae6868654a448bd5add8c1ccc36438de84ddaca8a798ca991e2eae67848fc6
+    Rule: multiple objects report compatible explicit scheduler constraints; cause confidence=medium
+    Evidence record-caaadce27b79116727f31ab3baea9fa4ba5f7de458ffb017899866d7543041c3 (06-test-c.jsonl:14349): 0/6 nodes are available: 3 Insufficient cpu, 3 Insufficient memory. preemption: 0/6 nodes are available: 6 No preemption victims found for incoming pod.
+    Evidence record-f201560f5c8858a0637b19456b117233cfe50ca2af36ba36717aff49f9e25388 (06-test-c.jsonl:19970): 0/6 nodes are available: 3 Insufficient cpu, 3 Insufficient memory. preemption: 0/6 nodes are available: 6 No preemption victims found for incoming pod.
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/data-pipeline-3c7d2e1a9-49cdd uid=ebac89cf-42a2-2866-8294-5b2250e9a795 container=unknown affected nodes=unknown
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    FailedScheduling / constraints: rows=5; mode=occurrence; observed occurrences=5 (exact)
+    Range: 2024-06-01T10:21:06.972000Z .. 2024-06-01T10:25:40.652000Z; evidence=evidence-beebc4ee9197464ff0166d5c85e25e7e90f4abc7960152093c344f181a5de909
+    Rule: multiple objects report compatible explicit scheduler constraints; cause confidence=medium
+    Evidence record-6c5b915d67ebb0e9b3fa56df8dea9dd5fb5a91a72b5ab6e64c2a0f9e07ed6357 (06-test-c.jsonl:14235): 0/6 nodes are available: 3 Insufficient cpu, 3 Insufficient memory. preemption: 0/6 nodes are available: 6 No preemption victims found for incoming pod.
+    Evidence record-8b40b311d42701f53a0eec65ae7f9172efc36d32a235f9a67f24e4a0f4fde439 (06-test-c.jsonl:17528): 0/6 nodes are available: 3 Insufficient cpu, 3 Insufficient memory. preemption: 0/6 nodes are available: 6 No preemption victims found for incoming pod.
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/data-pipeline-3c7d2e1a9-ae67b uid=314f1b99-da7b-189d-205e-2246e548e8c2 container=unknown affected nodes=unknown
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    FailedScheduling / constraints: rows=9; mode=occurrence; observed occurrences=9 (exact)
+    Range: 2024-06-01T10:21:32.952000Z .. 2024-06-01T10:28:56.905000Z; evidence=evidence-e2238d90ee2efcfcb10fee3f22485cc65376c7fd44c77ff5b391dbb4cac0f5e4
+    Rule: multiple objects report compatible explicit scheduler constraints; cause confidence=medium
+    Evidence record-bae558395774a6b55a2117b35ced587d6debe8bc8188c9160e495f23261287ee (06-test-c.jsonl:14559): 0/6 nodes are available: 3 Insufficient cpu, 3 Insufficient memory. preemption: 0/6 nodes are available: 6 No preemption victims found for incoming pod.
+    Evidence record-5bf343b60e2caf4ed6f510d5e21aca6d85de08c775d0213c8dd787531ca3f8a8 (06-test-c.jsonl:19842): 0/6 nodes are available: 3 Insufficient cpu, 3 Insufficient memory. preemption: 0/6 nodes are available: 6 No preemption victims found for incoming pod.
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Object Pod/data-pipeline-3c7d2e1a9-ff798 uid=2be30082-d135-3bf4-7f58-4b78632ae469 container=unknown affected nodes=unknown
+    Ownership: confirmed (high); controller events name an unambiguous Deployment/ReplicaSet/Pod chain
+    FailedScheduling / constraints: rows=7; mode=occurrence; observed occurrences=7 (exact)
+    Range: 2024-06-01T10:20:05.527000Z .. 2024-06-01T10:27:51.281000Z; evidence=evidence-faa09cd1bed64e1bae5b7b97ab90ce794ad09caaece139670c643c8209f00dff
+    Rule: multiple objects report compatible explicit scheduler constraints; cause confidence=medium
+    Evidence record-a0de6b8b0388f99dfd623c29894386cca9aa5c553096b6d44e71a0fc66b57b9e (06-test-c.jsonl:13417): 0/6 nodes are available: 3 Insufficient cpu, 3 Insufficient memory. preemption: 0/6 nodes are available: 6 No preemption victims found for incoming pod.
+    Evidence record-0b29a284dd30c4a271321a6ab188084d50741ee250a6b026b4a4d7049fbb5b73 (06-test-c.jsonl:19043): 0/6 nodes are available: 3 Insufficient cpu, 3 Insufficient memory. preemption: 0/6 nodes are available: 6 No preemption victims found for incoming pod.
+    Count limitation: distinct count-1 identity uses assessment occurrence semantics
+  Association (rollout; medium): scale-up precedes failure onset within correlation threshold; temporal association is not proof of causation; evidence=record-4ce1f9a22c072e4ef3f7fdbdb6703b5f7245bbd86eeb2b879c60678254ba7076,record-51a6a2ae7b878b8df2708155021dce114c0e61c309acb208415d50a47a6a353c
+  Association (rollout; medium): scale-up precedes failure onset within correlation threshold; temporal association is not proof of causation; evidence=record-4ce1f9a22c072e4ef3f7fdbdb6703b5f7245bbd86eeb2b879c60678254ba7076,record-700378cd5bab30a89b9148bd61b5d316b9869d35f6287a7b18b463c3f27058ec
+  Association (rollout; medium): scale-up precedes failure onset within correlation threshold; temporal association is not proof of causation; evidence=record-4ce1f9a22c072e4ef3f7fdbdb6703b5f7245bbd86eeb2b879c60678254ba7076,record-8650508a6b870949c527003fa13d5050178cab4b68c930e1332a20fc34d2e4be
+  Association (rollout; medium): scale-up precedes failure onset within correlation threshold; temporal association is not proof of causation; evidence=record-4ce1f9a22c072e4ef3f7fdbdb6703b5f7245bbd86eeb2b879c60678254ba7076,record-d7416bc6a4d1a496ac653a7c6240e210febe383ad38e21993c59fdc1f3eb5b14
+  Association (rollout; medium): scale-up precedes failure onset within correlation threshold; temporal association is not proof of causation; evidence=record-4ce1f9a22c072e4ef3f7fdbdb6703b5f7245bbd86eeb2b879c60678254ba7076,record-e00b3abc61a50c0c28f2690268b513ced7f4017f73b5d4f5f2582f5239c4dbeb
+Next verification: Compare Pod requests, node allocatable capacity, taints and scheduling constraints.
+
+Nonreportable observations: 3 (full evidence retained in JSON)
+  batch-reporter-735bfe2b7-928a6 / Evicted: rows=1; mode=occurrence; observed occurrences=1 (exact); transient or insufficient independent evidence; evidence=evidence-6b33a8ce2f76927b342303271d8e973e112a70050fa115c35c7e52efd4cd9e3d
+  checkout-service-9331a3ed1-fdfed / FailedMount: rows=1; mode=occurrence; observed occurrences=1 (exact); transient or insufficient independent evidence; evidence=evidence-6fa7f3531cd4d7c2c42059aae0f276c0451fd7f2dccc762a34aa3ed440b6e9c2
+  search-service-1782d89c2-3990e / Unhealthy: rows=3; mode=occurrence; observed occurrences=3 (exact); transient or insufficient independent evidence; evidence=evidence-23530d954d32da6e4ce1ce0e8ed0fe7cb926e46157aa4eb9d0dce3cdd5c14806
