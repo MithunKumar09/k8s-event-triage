@@ -1,0 +1,197 @@
+{
+  "status": "PASS",
+  "scope": "Unchanged executable S and recovered current Linux performance; hosted CI and reviewer access are separate external gates.",
+  "source_revision": "95c2bb857e891f4e6127ced93b0f0c3ce3bc25f0",
+  "wheel_sha256": "3e842b14ff6dae7dbba23c3c6f255dad5cdbd3a499f9fa66d5f822601c588595",
+  "executable_configuration_sha256": "53482535a87d3339d500b44ca7041b99b6e94d370c29e60c8879be9fd370dc37",
+  "effective_policy_sha256": "b4403ae5c7861b5a1d061c2de91f8176b91cd8467d9bfbd8f4eb755593968509",
+  "dependency_lock_sha256": "0f2cd63f57e1e714d3d86aebcabe33a97917af34e1ffdd74ceda1fda35b4cc4a",
+  "application_changes_since_phase6": [],
+  "recovery_correction": "No application, policy, dependency, host configuration or threshold change. Stable current-host recovery confirmed by predeclared alternating diagnostics followed by one complete acceptance batch.",
+  "historical_slowdown_root_cause": "UNPROVEN. Historical 5.499146241s wall / 5.495827s CPU was CPU-bound; 0.013388355s persistence cannot explain it. Current source/runtime hashes match and the slowdown is no longer reproducible. Earlier 1700MHz versus current native frequency samples is consistent with host-performance variation but is not causal proof. Historical frequency, tracing and cgroup state were not sampled continuously, so the underlying historical cause cannot be established retrospectively.",
+  "controlled_comparison": {
+    "method": "Six predeclared alternating Phase 6/Phase 7 production-image launches, identical current host, Python, flags, environment, package inventory, application modules, input bytes, paths, timer, pipe capture and RSS observer.",
+    "image_ids": {
+      "6": "sha256:41e50fa155536f78ac96b387a1dd0770de06bf5de76c7075028fb243babfa783",
+      "7": "sha256:e1bd0c96b885a3cdb7ef41436f1c77ff53bbb09c2464138a5c36ef408ee6e34e"
+    },
+    "image_difference": "Wheel METADATA (README) and its RECORD digest differ; the ten application modules and common Python base layers are identical.",
+    "historical_reproduction_limit": "Historical Phase 6 acceptance used /review/.venv/bin/python in the retained tools image with 51 development packages. The disposable historical container no longer exists. Current A/B uses both retained production images, each with the sole project distribution; it is a controlled current comparison, not an exact historical environment replay.",
+    "runs": [
+      {
+        "order": 1,
+        "phase": 6,
+        "wall_seconds": 1.7616053409983579,
+        "cpu_seconds": 1.76092,
+        "peak_rss_bytes": 90976256,
+        "stdout_sha256": "d9f8a960d6559c3b32bac0f8441b0aecbca669c4e24c2c873876b8b113dd6beb"
+      },
+      {
+        "order": 2,
+        "phase": 7,
+        "wall_seconds": 1.6517211840000527,
+        "cpu_seconds": 1.6508300000000002,
+        "peak_rss_bytes": 90714112,
+        "stdout_sha256": "d9f8a960d6559c3b32bac0f8441b0aecbca669c4e24c2c873876b8b113dd6beb"
+      },
+      {
+        "order": 3,
+        "phase": 6,
+        "wall_seconds": 1.712994579000224,
+        "cpu_seconds": 1.712415,
+        "peak_rss_bytes": 90836992,
+        "stdout_sha256": "d9f8a960d6559c3b32bac0f8441b0aecbca669c4e24c2c873876b8b113dd6beb"
+      },
+      {
+        "order": 4,
+        "phase": 7,
+        "wall_seconds": 1.6458890929970948,
+        "cpu_seconds": 1.645349,
+        "peak_rss_bytes": 90685440,
+        "stdout_sha256": "d9f8a960d6559c3b32bac0f8441b0aecbca669c4e24c2c873876b8b113dd6beb"
+      },
+      {
+        "order": 5,
+        "phase": 6,
+        "wall_seconds": 1.872021457998926,
+        "cpu_seconds": 1.8709619999999998,
+        "peak_rss_bytes": 90914816,
+        "stdout_sha256": "d9f8a960d6559c3b32bac0f8441b0aecbca669c4e24c2c873876b8b113dd6beb"
+      },
+      {
+        "order": 6,
+        "phase": 7,
+        "wall_seconds": 1.654811028001859,
+        "cpu_seconds": 1.6542149999999998,
+        "peak_rss_bytes": 90972160,
+        "stdout_sha256": "d9f8a960d6559c3b32bac0f8441b0aecbca669c4e24c2c873876b8b113dd6beb"
+      }
+    ]
+  },
+  "linux_performance": {
+    "launches": 72,
+    "first_launches": 12,
+    "measured_runs": 60,
+    "min_measured_seconds": 1.6408164179993037,
+    "max_measured_seconds": 1.9388637229967571,
+    "min_cpu_seconds": 1.6401010000000003,
+    "max_cpu_seconds": 1.9377080000000007,
+    "max_observed_rss_bytes": 91500544,
+    "all_outputs_exact": true,
+    "all_exits_zero": true,
+    "all_stderr_empty": true,
+    "cgroup_cpu_throttled_usec_delta": 0,
+    "major_page_faults": 0,
+    "performance_csv": "verification/linux-recovery-performance.csv",
+    "performance_csv_sha256": "77b9f72a59c3c5723ced75bd8bbae03fbbce6635e1ed918c208fe91d9f44399f"
+  },
+  "linux_environment": {
+    "python": "3.12.16 (main, Nov  5 2026, 07:58:44) [GCC 12.2.0]",
+    "python_executable": "/usr/local/bin/python",
+    "python_binary_sha256": "4dbf3143240288fb2170257ffaa7bd030cdda5d2703d1f5f30b627042267e2e3",
+    "flags": "sys.flags(debug=0, inspect=0, interactive=0, optimize=0, dont_write_bytecode=1, no_user_site=0, no_site=0, ignore_environment=0, verbose=0, bytes_warning=0, quiet=0, hash_randomization=1, isolated=0, dev_mode=False, utf8_mode=0, warn_default_encoding=0, safe_path=False, int_max_str_digits=4300)",
+    "trace": "None",
+    "profile": "None",
+    "packages": [
+      [
+        "k8s-event-triage",
+        "0.1.0"
+      ]
+    ],
+    "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.36",
+    "runtime_environment": {
+      "PATH": "/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "LANG": "C.UTF-8",
+      "PYTHON_VERSION": "3.12.16",
+      "PYTHON_SHA256": "b5796915dc45ff745cfb4e990a7e7c93d6f546328a102ce31448d69ebc37575c",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONUNBUFFERED": "1",
+      "PIP_DISABLE_PIP_VERSION_CHECK": "1"
+    },
+    "cpu_max": "max 100000",
+    "cpu_weight": "100",
+    "cpuset_effective": "0-15",
+    "memory_max": "max",
+    "memory_swap_current_samples": [
+      0
+    ],
+    "host_frequency_samples_mhz": [
+      2900
+    ],
+    "host_sample_count": 131,
+    "host_busy_percent_range": [
+      9.268292682926829,
+      39.6078431372549
+    ],
+    "ac_line_status_samples": [
+      1
+    ],
+    "module_sha256": {
+      "__init__.py": "f269bb9b728f375b84f06b5ec5246073dfe5e1f36b316b8a906bad104f8663b2",
+      "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "classify.py": "ab162cdba2447257055303c927c36ef8f245f2939a55f53e35fc24bc42513b1d",
+      "cli.py": "ccdfb9b62da640edd3ce7768faf83b8535f82e85af7baf32e70e3b57389491cf",
+      "correlate.py": "7c75716685c2c8319144a5328e2923dcd3fdb57856bdd243d1f5fa11de9f69aa",
+      "group.py": "4c2c35398014e08c35f594595f18b970a4d7da99e4534b57990ad68ba38b54cd",
+      "model.py": "ee0575ba340cbf30ed97c45948fc10c539a527752945c44a391fad2619216d10",
+      "parse.py": "22477d8a45c0fd93efa0044e202df29d209f5e4423de7745b18715117c991b0a",
+      "policy.py": "a805e25a7a46bfd89a9581dcd88d36cfcb92efab6199c1a085598de963be32b5",
+      "render.py": "50584630d3cb5737e7ecd8b4eca5e66dd97b17654516e6a42ee9d9be27ffaf60"
+    },
+    "input_location": "ordinary /tmp/review container overlay filesystem, copied from byte-verified inputs before timing"
+  },
+  "correctness": {
+    "windows": {
+      "tests": 340,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "linux": {
+      "tests": 340,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "note": "Preserved successful S-bound results; no application/test/configuration change invalidates them."
+  },
+  "build": {
+    "canonical_windows_linux_docker_wheel_equal": true,
+    "runtime_modules_identical_to_phase6": true,
+    "wheel_payload_delta_vs_phase6": [
+      "k8s_event_triage-0.1.0.dist-info/METADATA",
+      "k8s_event_triage-0.1.0.dist-info/RECORD"
+    ]
+  },
+  "docker": {
+    "image_id": "sha256:e1bd0c96b885a3cdb7ef41436f1c77ff53bbb09c2464138a5c36ef408ee6e34e",
+    "scenario_comparisons": 12,
+    "readonly_nonroot_networknone": true,
+    "invalid_input_cases": 2,
+    "runtime_packages": [
+      [
+        "k8s-event-triage",
+        "0.1.0"
+      ]
+    ]
+  },
+  "analysis": {
+    "sha256": "5bd01bbd8a1c92e2f405e3a4e905d04aadc7e6387e47f8cd5af69021f6fe9d0d",
+    "word_counts": {
+      "04-test-a": 148,
+      "05-test-b": 144,
+      "06-test-c": 153
+    },
+    "text_json_parity": true,
+    "signal_reconciliation": "425 = 410 highlighted + 15 retained transient observations"
+  },
+  "measurement_limits": [
+    "First-recorded launch per input/format is separate; files were already read, so no cold-cache claim.",
+    "Native subprocess creation through complete stdout/stderr capture is timed using the unchanged public linux_measure observer; snapshotting, hashing and evidence persistence follow or precede this boundary.",
+    "CPU is child user+system resource usage; RSS is sampled live VmHWM and may miss late peaks. Parent capture buffers are excluded.",
+    "WSL2/Docker Desktop shares the laptop with 19 existing containers. No workload, power, affinity, security, quota, cache or process-priority manipulation occurred.",
+    "Current recovery does not prove the historical root cause or guarantee hardware-independent performance."
+  ],
+  "hosted_ci": "Pending actual execution after authorized publication; not certified by this local evidence.",
+  "reviewer_access": "Invitations/access are externally verified after hosted CI; not certified by this local evidence."
+}

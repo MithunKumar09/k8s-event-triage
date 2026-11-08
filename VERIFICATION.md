@@ -1,5 +1,40 @@
 # Release verification
 
+## Phase 7 recovered Linux acceptance - 2026-11-08
+
+Executable S: `95c2bb857e891f4e6127ced93b0f0c3ce3bc25f0`. Canonical wheel: `3e842b14ff6dae7dbba23c3c6f255dad5cdbd3a499f9fa66d5f822601c588595`. [Current source-bound evidence](verification/source-release.json) and [all 72 full-precision CPU/wall/RSS records](verification/linux-recovery-performance.csv) are authoritative for this local recovery. [Captures](outputs/manifest.json) bind to S; no executable content changed.
+
+The historical Linux slowdown's underlying cause remains **unproven**. Its 5.499s wall/5.496s CPU was real and CPU-bound; persistence added only 0.013s. Six predeclared alternating retained-image runs now produce Phase 6 times 1.761605/1.712995/1.872021s and Phase 7 times 1.651721/1.645889/1.654811s. Both have identical Python binaries, flags, environments, runtime packages, module and input hashes; wheel differences are README-bearing METADATA and RECORD only. The original disposable Phase 6 development venv is unavailable; current production-image A/B is explicitly not an exact historical replay. Earlier 1700MHz and current host frequency samples are correlation, not proof of a power cause.
+
+One complete subsequent acceptance batch passed: **72 launches, 12 first plus 60 measured; every mandatory run below five seconds**. Slowest measured 1.938863723s; maximum observed RSS 87.26MiB. Every exit is zero, stderr empty and stdout exactly matches the approved baseline. Native subprocess startup through complete pipe capture is timed; evidence writes/hash work are outside the boundary. Live VmHWM sampling may miss late peaks and excludes parent capture buffers. No cold-cache, exclusive-host or hardware-independent claim is made.
+
+Current cgroup CPU quota is unlimited, effective CPUs 0-15, throttling delta zero, swap use zero and major page faults zero. Read-only Windows sampling recorded 131 points with reported MHz values [2900]; Balanced plan and existing workloads were preserved. No power, security, priority, affinity, quota or cache setting was changed. The full records document normal host load and environment limitations.
+
+| Input | Format | First (s) | Measured 1-5 (s) | Peak RSS (MiB) |
+|---|---|---:|---|---:|
+| 01-healthy.jsonl | text | 1.678281 | 1.640816, 1.683686, 1.697608, 1.907018, 1.816500 | 86.63 |
+| 01-healthy.jsonl | json | 1.727505 | 1.700384, 1.681032, 1.786420, 1.777009, 1.711492 | 86.70 |
+| 02-memory-leak.jsonl | text | 1.707461 | 1.712180, 1.668751, 1.859220, 1.797657, 1.657633 | 86.97 |
+| 02-memory-leak.jsonl | json | 1.650012 | 1.745639, 1.701998, 1.873525, 1.827325, 1.763251 | 87.04 |
+| 03-image-pull-failure.jsonl | text | 1.666527 | 1.674272, 1.918845, 1.781235, 1.663800, 1.688137 | 86.94 |
+| 03-image-pull-failure.jsonl | json | 1.667095 | 1.708332, 1.868552, 1.749560, 1.705308, 1.693856 | 87.01 |
+| 04-test-a.jsonl | text | 1.688333 | 1.705067, 1.909785, 1.893042, 1.750199, 1.851549 | 86.98 |
+| 04-test-a.jsonl | json | 1.693286 | 1.893454, 1.786440, 1.717508, 1.702228, 1.701497 | 86.96 |
+| 05-test-b.jsonl | text | 1.724930 | 1.889890, 1.750941, 1.721462, 1.686151, 1.665799 | 86.59 |
+| 05-test-b.jsonl | json | 1.838988 | 1.795061, 1.716420, 1.717557, 1.658642, 1.790077 | 86.77 |
+| 06-test-c.jsonl | text | 1.900393 | 1.765059, 1.661708, 1.706062, 1.673238, 1.860610 | 87.24 |
+| 06-test-c.jsonl | json | 1.747647 | 1.741132, 1.711284, 1.697805, 1.715869, 1.938864 | 87.26 |
+
+The already successful **340 Windows / 340 Linux tests**, Ruff lint/format, strict mypy, locked installation/audit, Make/build and non-root read-only Docker correctness remain valid for unchanged S. Canonical wheel bytes match Windows, Linux and Docker; runtime has only the project distribution. Current independent source/analysis reconciliation passed all three 148/144/153-word analyses and **425 = 410 + 15** retained signal accounting. The six raw captures and analysis bodies remain unchanged; only revision-bound metadata is promoted.
+
+Frozen policy: `b4403ae5c7861b5a1d061c2de91f8176b91cd8467d9bfbd8f4eb755593968509`. Source/configuration/test fingerprint: `53482535a87d3339d500b44ca7041b99b6e94d370c29e60c8879be9fd370dc37`. Lock: `0f2cd63f57e1e714d3d86aebcabe33a97917af34e1ffdd74ceda1fda35b4cc4a`.
+
+This evidence intentionally embeds S, not its own evidence commit SHA. The exact descendant commit is externally verifiable from Git. Actual hosted CI and reviewer invitation/access state are separate external release gates; this local record makes no claim they have completed. [GitHub Actions](https://github.com/MithunKumar09/k8s-event-triage/actions) records the actual hosted result.
+
+## Historical Phase 6 evidence (preserved)
+
+The following pre-commit record, older wheel/fingerprint and then-pending Phase 7 status are historical. Use the Phase 7 source-bound evidence above for current acceptance.
+
 Verified 2026-11-07. Phase 6 PASS; final committed-revision/submission gates remain pending.
 
 Application source and frozen policy are unchanged. Release changes add build/documentation/CI tooling, normalize cross-platform wheel metadata, handle a Linux RSS observer exit race, and update only the development installer from pip 24.2 to 26.2.1. All other 50 pins/hash sets remain unchanged.
