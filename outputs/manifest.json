@@ -1,6 +1,6 @@
 {
   "schema_version": "1",
-  "phase": 7,
+  "verification_stage": "source_certification",
   "capture_status": "PASS",
   "source_revision": "95c2bb857e891f4e6127ced93b0f0c3ce3bc25f0",
   "wheel_sha256": "3e842b14ff6dae7dbba23c3c6f255dad5cdbd3a499f9fa66d5f822601c588595",

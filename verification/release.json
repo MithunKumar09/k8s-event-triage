@@ -1,8 +1,8 @@
 {
-  "phase": 6,
+  "verification_stage": "release_validation",
   "status": "PASS",
   "source_revision": null,
-  "source_revision_note": "Verified working tree; final committed source and capture reconciliation remain Phase 7",
+  "source_revision_note": "Verified working tree; committed-source certification and final capture reconciliation were pending at this checkpoint",
   "executable_configuration_sha256": "0e25150c6958d8429f82aa0aff4613067337108e73fbefaee10c278865447d85",
   "source_configuration_sha256": {
     ".dockerignore": "0e610928e7776a6a13390ddde4dce1e0db400b1887e47270b33b68c829de8476",
@@ -67,12 +67,12 @@
   "application_source_changed": false,
   "hosted_ci_executed": false,
   "git_submission_or_reviewer_access_changed": false,
-  "phase7_started": false,
+  "source_certification_started": false,
   "limitations": [
     "GitHub-hosted workflow has not run; equivalent Linux commands executed locally",
     "GNU Make ran in Linux; Windows host Make absent. Docker Make wrappers only dry-run; actual Docker commands independently verified",
     "No OS-image/interpreter CVE scan; pip-audit covers known advisories for the full 51-package development closure",
     "RSS samples can miss late peaks; parent capture buffers excluded; no cold-cache/exclusive-host/hardware-independent claim",
-    "Fresh submission export verified; final committed checkout/reviewer access remains Phase 7"
+    "Fresh submission export verified; final committed-checkout certification and reviewer access were pending at this checkpoint"
   ]
 }

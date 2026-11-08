@@ -6,21 +6,21 @@
   "executable_configuration_sha256": "53482535a87d3339d500b44ca7041b99b6e94d370c29e60c8879be9fd370dc37",
   "effective_policy_sha256": "b4403ae5c7861b5a1d061c2de91f8176b91cd8467d9bfbd8f4eb755593968509",
   "dependency_lock_sha256": "0f2cd63f57e1e714d3d86aebcabe33a97917af34e1ffdd74ceda1fda35b4cc4a",
-  "application_changes_since_phase6": [],
+  "application_changes_since_release_validation": [],
   "recovery_correction": "No application, policy, dependency, host configuration or threshold change. Stable current-host recovery confirmed by predeclared alternating diagnostics followed by one complete acceptance batch.",
   "historical_slowdown_root_cause": "UNPROVEN. Historical 5.499146241s wall / 5.495827s CPU was CPU-bound; 0.013388355s persistence cannot explain it. Current source/runtime hashes match and the slowdown is no longer reproducible. Earlier 1700MHz versus current native frequency samples is consistent with host-performance variation but is not causal proof. Historical frequency, tracing and cgroup state were not sampled continuously, so the underlying historical cause cannot be established retrospectively.",
   "controlled_comparison": {
-    "method": "Six predeclared alternating Phase 6/Phase 7 production-image launches, identical current host, Python, flags, environment, package inventory, application modules, input bytes, paths, timer, pipe capture and RSS observer.",
+    "method": "Six predeclared alternating baseline/certified production-image launches, identical current host, Python, flags, environment, package inventory, application modules, input bytes, paths, timer, pipe capture and RSS observer.",
     "image_ids": {
-      "6": "sha256:41e50fa155536f78ac96b387a1dd0770de06bf5de76c7075028fb243babfa783",
-      "7": "sha256:e1bd0c96b885a3cdb7ef41436f1c77ff53bbb09c2464138a5c36ef408ee6e34e"
+      "baseline": "sha256:41e50fa155536f78ac96b387a1dd0770de06bf5de76c7075028fb243babfa783",
+      "certified": "sha256:e1bd0c96b885a3cdb7ef41436f1c77ff53bbb09c2464138a5c36ef408ee6e34e"
     },
     "image_difference": "Wheel METADATA (README) and its RECORD digest differ; the ten application modules and common Python base layers are identical.",
-    "historical_reproduction_limit": "Historical Phase 6 acceptance used /review/.venv/bin/python in the retained tools image with 51 development packages. The disposable historical container no longer exists. Current A/B uses both retained production images, each with the sole project distribution; it is a controlled current comparison, not an exact historical environment replay.",
+    "historical_reproduction_limit": "Historical release-validation acceptance used /review/.venv/bin/python in the retained tools image with 51 development packages. The disposable historical container no longer exists. Current A/B uses both retained production images, each with the sole project distribution; it is a controlled current comparison, not an exact historical environment replay.",
     "runs": [
       {
         "order": 1,
-        "phase": 6,
+        "runtime_label": "baseline",
         "wall_seconds": 1.7616053409983579,
         "cpu_seconds": 1.76092,
         "peak_rss_bytes": 90976256,
@@ -28,7 +28,7 @@
       },
       {
         "order": 2,
-        "phase": 7,
+        "runtime_label": "certified",
         "wall_seconds": 1.6517211840000527,
         "cpu_seconds": 1.6508300000000002,
         "peak_rss_bytes": 90714112,
@@ -36,7 +36,7 @@
       },
       {
         "order": 3,
-        "phase": 6,
+        "runtime_label": "baseline",
         "wall_seconds": 1.712994579000224,
         "cpu_seconds": 1.712415,
         "peak_rss_bytes": 90836992,
@@ -44,7 +44,7 @@
       },
       {
         "order": 4,
-        "phase": 7,
+        "runtime_label": "certified",
         "wall_seconds": 1.6458890929970948,
         "cpu_seconds": 1.645349,
         "peak_rss_bytes": 90685440,
@@ -52,7 +52,7 @@
       },
       {
         "order": 5,
-        "phase": 6,
+        "runtime_label": "baseline",
         "wall_seconds": 1.872021457998926,
         "cpu_seconds": 1.8709619999999998,
         "peak_rss_bytes": 90914816,
@@ -60,7 +60,7 @@
       },
       {
         "order": 6,
-        "phase": 7,
+        "runtime_label": "certified",
         "wall_seconds": 1.654811028001859,
         "cpu_seconds": 1.6542149999999998,
         "peak_rss_bytes": 90972160,
@@ -157,8 +157,8 @@
   },
   "build": {
     "canonical_windows_linux_docker_wheel_equal": true,
-    "runtime_modules_identical_to_phase6": true,
-    "wheel_payload_delta_vs_phase6": [
+    "runtime_modules_identical_to_release_validation": true,
+    "wheel_payload_delta_vs_release_validation": [
       "k8s_event_triage-0.1.0.dist-info/METADATA",
       "k8s_event_triage-0.1.0.dist-info/RECORD"
     ]

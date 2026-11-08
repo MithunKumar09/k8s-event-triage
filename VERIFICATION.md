@@ -1,10 +1,12 @@
 # Release verification
 
-## Phase 7 recovered Linux acceptance - 2026-11-08
+See the [verification record guide](verification/README.md) for descriptive stage names and dated record conventions used for future releases.
+
+## Source certification and Linux performance validation - 2026-11-08
 
 Executable S: `95c2bb857e891f4e6127ced93b0f0c3ce3bc25f0`. Canonical wheel: `3e842b14ff6dae7dbba23c3c6f255dad5cdbd3a499f9fa66d5f822601c588595`. [Current source-bound evidence](verification/source-release.json) and [all 72 full-precision CPU/wall/RSS records](verification/linux-recovery-performance.csv) are authoritative for this local recovery. [Captures](outputs/manifest.json) bind to S; no executable content changed.
 
-The historical Linux slowdown's underlying cause remains **unproven**. Its 5.499s wall/5.496s CPU was real and CPU-bound; persistence added only 0.013s. Six predeclared alternating retained-image runs now produce Phase 6 times 1.761605/1.712995/1.872021s and Phase 7 times 1.651721/1.645889/1.654811s. Both have identical Python binaries, flags, environments, runtime packages, module and input hashes; wheel differences are README-bearing METADATA and RECORD only. The original disposable Phase 6 development venv is unavailable; current production-image A/B is explicitly not an exact historical replay. Earlier 1700MHz and current host frequency samples are correlation, not proof of a power cause.
+The historical Linux slowdown's underlying cause remains **unproven**. Its 5.499s wall/5.496s CPU was real and CPU-bound; persistence added only 0.013s. Six predeclared alternating retained-image runs now produce release-validation baseline times 1.761605/1.712995/1.872021s and certified-runtime times 1.651721/1.645889/1.654811s. Both have identical Python binaries, flags, environments, runtime packages, module and input hashes; wheel differences are README-bearing METADATA and RECORD only. The original disposable release-validation development venv is unavailable; current production-image A/B is explicitly not an exact historical replay. Earlier 1700MHz and current host frequency samples are correlation, not proof of a power cause.
 
 One complete subsequent acceptance batch passed: **72 launches, 12 first plus 60 measured; every mandatory run below five seconds**. Slowest measured 1.938863723s; maximum observed RSS 87.26MiB. Every exit is zero, stderr empty and stdout exactly matches the approved baseline. Native subprocess startup through complete pipe capture is timed; evidence writes/hash work are outside the boundary. Live VmHWM sampling may miss late peaks and excludes parent capture buffers. No cold-cache, exclusive-host or hardware-independent claim is made.
 
@@ -31,11 +33,11 @@ Frozen policy: `b4403ae5c7861b5a1d061c2de91f8176b91cd8467d9bfbd8f4eb755593968509
 
 This evidence intentionally embeds S, not its own evidence commit SHA. The exact descendant commit is externally verifiable from Git. Actual hosted CI and reviewer invitation/access state are separate external release gates; this local record makes no claim they have completed. [GitHub Actions](https://github.com/MithunKumar09/k8s-event-triage/actions) records the actual hosted result.
 
-## Historical Phase 6 evidence (preserved)
+## Historical release validation - 2026-11-07
 
-The following pre-commit record, older wheel/fingerprint and then-pending Phase 7 status are historical. Use the Phase 7 source-bound evidence above for current acceptance.
+The following pre-commit record, older wheel/fingerprint and then-pending source certification are historical. Use the source-bound certification above for current acceptance.
 
-Verified 2026-11-07. Phase 6 PASS; final committed-revision/submission gates remain pending.
+Verified 2026-11-07. Release validation passed; final committed-revision and publication checks were pending at this checkpoint.
 
 Application source and frozen policy are unchanged. Release changes add build/documentation/CI tooling, normalize cross-platform wheel metadata, handle a Linux RSS observer exit race, and update only the development installer from pip 24.2 to 26.2.1. All other 50 pins/hash sets remain unchanged.
 
@@ -45,7 +47,7 @@ Application source and frozen policy are unchanged. Release changes add build/do
 - Debian Linux Python 3.12.16: 331 tests, actual Make install/check/test/build/run/capture/verify/bench/audit and clean runtime installation passed from 63 intended submission files, without internal files or original environments.
 - The canonical wheel hash matches native Windows, Docker build and fresh Linux build. Docker runs as UID/GID 65532 with read-only root, no capabilities/network, and only the project distribution installed. Twelve scenario outputs match native bytes; two invalid-input cases return exit 3 without successful stdout.
 - The 51-package hash lock passed integrity/installed-version checks and a strict pip-audit query with no known vulnerabilities. The old installer findings were corrected without advisory suppression. This does not certify the OS image or Python interpreter against all vulnerabilities.
-- Source archive inspection found no internal/agent/environment files or supplied input datasets; the intended submission source retains all six inputs. Wheel contains only ten application modules and four metadata entries.
+- Source archive inspection found no internal notes, local environments or supplied input datasets; the intended submission source retains all six inputs. Wheel contains only ten application modules and four metadata entries.
 - GitHub Actions is configured with verified action commit pins and read-only repository permissions. Hosted CI has not run. Linux executed the corresponding application/build/container verification; Docker Make wrappers were syntax/dry-run checked, with actual Docker commands tested independently.
 
 ## Performance evidence
@@ -90,7 +92,7 @@ Full-precision records and input/output hashes: [Windows CSV](verification/windo
 
 ## Evidence reconciliation and lineage
 
-All six required unknown-scenario stdout captures and ANALYSIS.md remain byte-identical to the independently reviewed Phase 5 evidence. Their manifest is refreshed against the actual canonical wheel and current release-source fingerprint.
+All six required unknown-scenario stdout captures and ANALYSIS.md remain byte-identical to the independently reviewed scenario-validation evidence. Their manifest is refreshed against the actual canonical wheel and current release-source fingerprint.
 
 | Scenario | Retained signal rows | Highlighted in analysis | Other transient signal rows |
 |---|---:|---:|---:|
@@ -103,4 +105,4 @@ The 15 remaining rows comprise one isolated memory eviction, one isolated mount 
 
 Wheel SHA-256: `46effd1d792c14ab532a10a532ac66fb21172bab3a1851eb12d576bb596ee073`. Effective policy SHA-256: `b4403ae5c7861b5a1d061c2de91f8176b91cd8467d9bfbd8f4eb755593968509`. Release executable/configuration fingerprint: `0e25150c6958d8429f82aa0aff4613067337108e73fbefaee10c278865447d85`. See [capture manifest](outputs/manifest.json) and [release record](verification/release.json).
 
-Final clean Git revision, revision-bound release captures, repository privacy and actual reviewer access remain Phase 7. No submission, push or invitation occurred in Phase 6.
+At this historical checkpoint, the final clean Git revision, revision-bound captures, repository privacy and reviewer access still required source certification and publication checks. No submission, push or invitation occurred during release validation.
